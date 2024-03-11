@@ -33,7 +33,7 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: |
-          npm run sync
+          npm run sync --force
 
       - name: 配置Git用户名邮箱
         run: |
