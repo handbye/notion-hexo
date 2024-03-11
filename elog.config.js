@@ -16,18 +16,18 @@ module.exports = {
       catalog: false,
       frontMatter: {
         enable: true,
-        include: ['categories', 'tags', 'title', 'date', 'updated', 'permalink', 'cover', 'description'],
+        include: ['layout','categories','tags', 'title', 'date', 'permalink', 'home_cover'],
         timeFormat: true,
       },
-      formatExt: './format-image.js',
+      //formatExt: './format-image.js',
     }
   },
   image: {
     enable: true,
     platform: 'local',
     local: {
-      outputDir: './source/images',
-      prefixKey: '/images'
+      outputDir: './source/post_images',
+      prefixKey: '../post_images'
     }
   },
 }

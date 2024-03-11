@@ -3,22 +3,22 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Notion-Hexo
-subtitle: 'Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案'
-description: 'Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案'
-keywords:
-author: 1874
-language: zh-CN
-timezone: Asia/Shanghai
+title: darkless
+subtitle: 网络与信息安全
+description: '网络与信息安全博客'
+keywords: 网络安全,darkless,blog
+author: darkless
+language: zh-CN  # en | zh-CN | zh-TW
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://notion-hexo.vercel.app
-permalink: :title/
+url: https://darkless.cn
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -31,14 +31,14 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
-filename_case: 0
+filename_case: 1
 render_drafts: false
 post_asset_folder: false
 relative_link: false
@@ -97,9 +97,34 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: keep
+
+search:
+  path: search.json
+  field: post
+  content: true
+  format: striptags
+
+# Feed Atom
+# npm install hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+all_minifier: false
+
+jsdelivr_auto_fallback:
+  enable: true
+  add_defer: false
+  dest_list:
+    - cdn.jsdelivr.net
+    - gcore.jsdelivr.net
+    - testingcf.jsdelivr.net
+    - quantil.jsdelivr.net
+    - fastly.jsdelivr.net
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+   type: ''
