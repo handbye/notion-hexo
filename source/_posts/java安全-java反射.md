@@ -1,5 +1,5 @@
 ---
-permalink: 2021/10/22/java-sec-java-reflect
+permalink: 2021/10/22/java-sec-java-reflect/
 tags:
   - java
   - 反射

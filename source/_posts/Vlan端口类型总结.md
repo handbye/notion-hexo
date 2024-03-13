@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/16/Vlan-port-summary
+permalink: 2016/12/16/Vlan-port-summary/
 tags:
   - vlan
 layout: post

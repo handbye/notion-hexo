@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/02/Python-regex-summary
+permalink: 2019/04/02/Python-regex-summary/
 tags:
   - python
   - 正则表达式

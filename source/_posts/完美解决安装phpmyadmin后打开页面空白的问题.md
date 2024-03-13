@@ -1,5 +1,5 @@
 ---
-permalink: 2016/05/08/slove-phpmyadmin-page-null
+permalink: 2016/05/08/slove-phpmyadmin-page-null/
 tags:
   - phpmyadmin
 layout: post

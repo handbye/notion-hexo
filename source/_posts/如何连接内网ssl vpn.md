@@ -1,5 +1,5 @@
 ---
-permalink: 2022/06/15/connect-Intranet-ssl-vpn
+permalink: 2022/06/15/connect-Intranet-ssl-vpn/
 tags:
   - sslvpn
 layout: post

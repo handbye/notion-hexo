@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/21/dvwa-brute-force
+permalink: 2019/04/21/dvwa-brute-force/
 tags:
   - 爆破
 layout: post

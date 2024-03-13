@@ -1,5 +1,5 @@
 ---
-permalink: 2019/11/11/burpsuite-plugins
+permalink: 2019/11/11/burpsuite-plugins/
 tags:
   - burpsuite
 layout: post

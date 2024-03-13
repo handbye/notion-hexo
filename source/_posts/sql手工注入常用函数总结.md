@@ -1,5 +1,5 @@
 ---
-permalink: 2019/06/01/sqli-common-fuction
+permalink: 2019/06/01/sqli-common-fuction/
 tags:
   - SQL注入
 layout: post

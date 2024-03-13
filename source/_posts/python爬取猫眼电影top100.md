@@ -1,5 +1,5 @@
 ---
-permalink: 2018/12/01/python-maoyan-movie-top100
+permalink: 2018/12/01/python-maoyan-movie-top100/
 tags:
   - 爬虫
   - 猫眼电影

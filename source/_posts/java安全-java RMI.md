@@ -1,5 +1,5 @@
 ---
-permalink: 2021/10/26/java-sec-rmi
+permalink: 2021/10/26/java-sec-rmi/
 tags:
   - java
   - RMI

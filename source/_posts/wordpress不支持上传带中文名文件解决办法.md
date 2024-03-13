@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/09/wordpres-upload
+permalink: 2016/12/09/wordpres-upload/
 tags:
   - wordpress
 layout: post

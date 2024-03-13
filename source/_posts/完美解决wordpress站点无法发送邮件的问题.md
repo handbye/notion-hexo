@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/19/slove-wordpress-can't-send-email
+permalink: 2016/11/19/slove-wordpress-can't-send-email/
 tags:
   - wordpress
 layout: post

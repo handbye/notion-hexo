@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/02/vrrp-backup-group
+permalink: 2016/12/02/vrrp-backup-group/
 tags:
   - vrrp
 layout: post

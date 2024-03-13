@@ -1,5 +1,5 @@
 ---
-permalink: 2016/06/13/slove-wordpress-thumbnail-not-display
+permalink: 2016/06/13/slove-wordpress-thumbnail-not-display/
 tags:
   - wordpress
 layout: post

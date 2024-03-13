@@ -1,5 +1,5 @@
 ---
-permalink: 2022/02/23/notion-fast
+permalink: 2022/02/23/notion-fast/
 tags:
   - notion
 layout: post

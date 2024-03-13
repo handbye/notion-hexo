@@ -1,5 +1,5 @@
 ---
-permalink: 2017/01/13/ospf-FA-address
+permalink: 2017/01/13/ospf-FA-address/
 tags:
   - ospf
   - FA-address

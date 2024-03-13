@@ -1,5 +1,5 @@
 ---
-permalink: 2019/05/13/dvwa-xss-stored
+permalink: 2019/05/13/dvwa-xss-stored/
 tags:
   - XSS
 layout: post

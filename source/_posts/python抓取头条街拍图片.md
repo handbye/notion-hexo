@@ -1,5 +1,5 @@
 ---
-permalink: 2018/12/02/python-toutiao-pic
+permalink: 2018/12/02/python-toutiao-pic/
 tags:
   - 爬虫
 layout: post

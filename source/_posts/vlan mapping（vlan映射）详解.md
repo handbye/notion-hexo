@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/17/vlan-mapping
+permalink: 2016/12/17/vlan-mapping/
 tags:
   - vlan Mapping
 layout: post

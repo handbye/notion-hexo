@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/29/VRRP-VRRP-intro
+permalink: 2016/11/29/VRRP-VRRP-intro/
 tags:
   - vrrp
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2019/07/03/dhcp-security
+permalink: 2019/07/03/dhcp-security/
 tags:
   - DHCP
 layout: post

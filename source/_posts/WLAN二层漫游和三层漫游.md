@@ -1,5 +1,5 @@
 ---
-permalink: 2017/06/22/WLAN-2layer-roam-3layer-roam
+permalink: 2017/06/22/WLAN-2layer-roam-3layer-roam/
 tags:
   - wlan漫游
 layout: post

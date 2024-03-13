@@ -1,5 +1,5 @@
 ---
-permalink: 2021/10/25/java-sec-classloader
+permalink: 2021/10/25/java-sec-classloader/
 tags:
   - java
   - 类加载器

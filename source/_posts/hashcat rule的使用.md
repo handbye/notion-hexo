@@ -1,5 +1,5 @@
 ---
-permalink: 2019/12/26/hashcat-rule
+permalink: 2019/12/26/hashcat-rule/
 tags:
   - hashcat
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2018/09/13/wordpress-https
+permalink: 2018/09/13/wordpress-https/
 tags:
   - wordpress
   - https

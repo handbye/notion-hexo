@@ -1,5 +1,5 @@
 ---
-permalink: 2019/01/11/use-python-markdown-and-Pygments
+permalink: 2019/01/11/use-python-markdown-and-Pygments/
 tags:
   - Pygments
 layout: post

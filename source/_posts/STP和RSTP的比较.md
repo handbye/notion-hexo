@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/19/STP-RST-diff
+permalink: 2016/12/19/STP-RST-diff/
 tags:
   - stp
   - rstp

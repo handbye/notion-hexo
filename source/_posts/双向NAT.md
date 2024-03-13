@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/19/two-way-NAT
+permalink: 2018/06/19/two-way-NAT/
 tags:
   - 防火墙
   - NAT

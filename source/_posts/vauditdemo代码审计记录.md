@@ -1,5 +1,5 @@
 ---
-permalink: 2019/12/02/vauditdemo-codeview
+permalink: 2019/12/02/vauditdemo-codeview/
 tags:
   - vauditdemo
 layout: post

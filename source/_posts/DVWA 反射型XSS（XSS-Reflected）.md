@@ -1,5 +1,5 @@
 ---
-permalink: 2019/05/12/dvwa-xss-reflected
+permalink: 2019/05/12/dvwa-xss-reflected/
 tags:
   - XSS
 layout: post

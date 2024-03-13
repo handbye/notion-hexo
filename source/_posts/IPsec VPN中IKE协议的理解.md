@@ -1,5 +1,5 @@
 ---
-permalink: 2019/03/02/ipsec-vpn-ike
+permalink: 2019/03/02/ipsec-vpn-ike/
 tags:
   - IKE
   - ipsec

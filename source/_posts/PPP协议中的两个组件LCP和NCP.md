@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/06/PPP-LCP-NCP
+permalink: 2016/12/06/PPP-LCP-NCP/
 tags:
   - LCP
   - NCP

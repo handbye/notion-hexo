@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/18/DHCP-snooping-summary
+permalink: 2018/06/18/DHCP-snooping-summary/
 tags:
   - DHCP snooping
 layout: post

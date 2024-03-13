@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/05/PPPoE-session
+permalink: 2016/12/05/PPPoE-session/
 tags:
   - PPPoE
 layout: post

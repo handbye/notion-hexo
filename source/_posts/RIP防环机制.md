@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/25/RIP-prevent-ring
+permalink: 2016/11/25/RIP-prevent-ring/
 tags:
   - rip
 layout: post

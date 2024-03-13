@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/13/IPV6-address-IPV6-get-address-method
+permalink: 2016/12/13/IPV6-address-IPV6-get-address-method/
 tags:
   - IPV6
 layout: post

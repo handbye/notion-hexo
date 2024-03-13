@@ -1,5 +1,5 @@
 ---
-permalink: 2019/10/08/bypass-safedog
+permalink: 2019/10/08/bypass-safedog/
 tags:
   - 安全狗
 layout: post

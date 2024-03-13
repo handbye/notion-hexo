@@ -1,5 +1,5 @@
 ---
-permalink: 2020/05/12/discuzx3.3-authkey-blasting
+permalink: 2020/05/12/discuzx3.3-authkey-blasting/
 tags:
   - Discuz
   - authkey

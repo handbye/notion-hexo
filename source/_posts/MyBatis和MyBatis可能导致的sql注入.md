@@ -1,5 +1,5 @@
 ---
-permalink: 2021/04/02/mybatis-and-sqli
+permalink: 2021/04/02/mybatis-and-sqli/
 tags:
   - SQL注入
   - MyBatis

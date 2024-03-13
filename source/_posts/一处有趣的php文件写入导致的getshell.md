@@ -1,5 +1,5 @@
 ---
-permalink: 2020/04/28/php-file-write
+permalink: 2020/04/28/php-file-write/
 tags:
   - getshell
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2018/04/21/IP-conflict-network-outage
+permalink: 2018/04/21/IP-conflict-network-outage/
 tags:
   - DAI
   - IPSG

@@ -1,5 +1,5 @@
 ---
-permalink: 2018/07/01/NAT-alg-ASPF
+permalink: 2018/07/01/NAT-alg-ASPF/
 tags:
   - NAT alg
   - ASPF

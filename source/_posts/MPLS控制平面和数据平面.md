@@ -1,5 +1,5 @@
 ---
-permalink: 2017/01/21/MPLS-control-plane-forwarding-plane
+permalink: 2017/01/21/MPLS-control-plane-forwarding-plane/
 tags:
   - MPLS
 layout: post

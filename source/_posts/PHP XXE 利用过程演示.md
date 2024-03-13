@@ -1,5 +1,5 @@
 ---
-permalink: 2020/03/16/php-xxe
+permalink: 2020/03/16/php-xxe/
 tags:
   - XXE
 layout: post

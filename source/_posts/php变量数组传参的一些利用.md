@@ -1,5 +1,5 @@
 ---
-permalink: 2021/10/14/php-var-array
+permalink: 2021/10/14/php-var-array/
 tags:
   - php
 layout: post

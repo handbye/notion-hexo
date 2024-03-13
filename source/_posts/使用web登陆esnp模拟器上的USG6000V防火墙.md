@@ -1,5 +1,5 @@
 ---
-permalink: 2018/03/15/web-login-esnp-USG6000V
+permalink: 2018/03/15/web-login-esnp-USG6000V/
 tags:
   - ensp
   - USG

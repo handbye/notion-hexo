@@ -1,5 +1,5 @@
 ---
-permalink: 2017/06/09/DAI
+permalink: 2017/06/09/DAI/
 tags:
   - DAI
   - ARP

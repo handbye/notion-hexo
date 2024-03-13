@@ -1,5 +1,5 @@
 ---
-permalink: 2018/07/16/ipsec-vpn
+permalink: 2018/07/16/ipsec-vpn/
 tags:
   - ipsec
   - vpn

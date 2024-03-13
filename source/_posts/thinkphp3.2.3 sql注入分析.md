@@ -1,5 +1,5 @@
 ---
-permalink: 2020/06/07/thinkphp3.2.3-sqli
+permalink: 2020/06/07/thinkphp3.2.3-sqli/
 tags:
   - thinkphp
   - SQL注入

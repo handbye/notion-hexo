@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/08/huawei-PPPoE-config
+permalink: 2016/12/08/huawei-PPPoE-config/
 tags:
   - PPPoE
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2021/08/18/yzmcms-code
+permalink: 2021/08/18/yzmcms-code/
 tags:
   - yzmcms
   - 代码审计

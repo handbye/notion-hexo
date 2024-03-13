@@ -1,5 +1,5 @@
 ---
-permalink: 2020/05/19/antsword-bypass-waf
+permalink: 2020/05/19/antsword-bypass-waf/
 tags:
   - AntSword
   - 蚁剑

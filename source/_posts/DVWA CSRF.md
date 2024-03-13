@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/27/dvwa-CSRF
+permalink: 2019/04/27/dvwa-CSRF/
 tags:
   - CSRF
 layout: post

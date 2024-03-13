@@ -1,5 +1,5 @@
 ---
-permalink: 2021/10/28/java-sec-proxy
+permalink: 2021/10/28/java-sec-proxy/
 tags:
   - java
   - 动态代理

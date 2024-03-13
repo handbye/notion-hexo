@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/24/ripv1-ripv2-diff
+permalink: 2016/11/24/ripv1-ripv2-diff/
 tags:
   - rip
 layout: post

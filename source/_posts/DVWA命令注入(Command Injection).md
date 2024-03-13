@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/24/dvwa-command-injection
+permalink: 2019/04/24/dvwa-command-injection/
 tags:
   - 命令注入
 layout: post

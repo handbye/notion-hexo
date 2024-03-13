@@ -1,5 +1,5 @@
 ---
-permalink: 2017/09/13/cisco-management-protocol
+permalink: 2017/09/13/cisco-management-protocol/
 tags:
   - cisco
   - 管理协议

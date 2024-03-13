@@ -1,5 +1,5 @@
 ---
-permalink: 2019/05/06/weak-session-ids
+permalink: 2019/05/06/weak-session-ids/
 tags:
   - session
 layout: post

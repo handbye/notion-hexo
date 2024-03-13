@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/24/RIPV1-RIPV2-compatibility
+permalink: 2016/11/24/RIPV1-RIPV2-compatibility/
 tags:
   - rip
 layout: post

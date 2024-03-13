@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/26/MPLS-VPN-RD-RT-VRF
+permalink: 2016/11/26/MPLS-VPN-RD-RT-VRF/
 tags:
   - MPLS
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/10/NAT-summary
+permalink: 2016/12/10/NAT-summary/
 tags:
   - NAT
 layout: post

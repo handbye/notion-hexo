@@ -1,5 +1,5 @@
 ---
-permalink: 2019/12/23/kuwomusic-xss
+permalink: 2019/12/23/kuwomusic-xss/
 tags:
   - XSS
 layout: post

@@ -1,5 +1,5 @@
 ---
-permalink: 2016/11/22/ospf-shamlink-learn
+permalink: 2016/11/22/ospf-shamlink-learn/
 tags:
   - shamlink
 layout: post

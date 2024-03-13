@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/28/dvwa-file-inclusion
+permalink: 2019/04/28/dvwa-file-inclusion/
 tags:
   - 文件包含
 layout: post

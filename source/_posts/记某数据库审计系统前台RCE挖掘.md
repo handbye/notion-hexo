@@ -1,5 +1,5 @@
 ---
-permalink: 2022/10/23/data-auit-system-rce
+permalink: 2022/10/23/data-auit-system-rce/
 tags:
   - 数据库审计
   - 代码审计

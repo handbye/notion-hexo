@@ -1,5 +1,5 @@
 ---
-permalink: 2019/05/02/dvwa-sql-injection
+permalink: 2019/05/02/dvwa-sql-injection/
 tags:
   - SQL注入
 layout: post

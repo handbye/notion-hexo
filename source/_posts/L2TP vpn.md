@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/26/L2TP-VPN
+permalink: 2018/06/26/L2TP-VPN/
 tags:
   - L2TPvpn
 layout: post

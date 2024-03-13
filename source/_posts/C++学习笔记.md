@@ -1,5 +1,5 @@
 ---
-permalink: 2020/11/22/cPlus-learn-note
+permalink: 2020/11/22/cPlus-learn-note/
 tags:
   - c++
 layout: post

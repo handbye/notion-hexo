@@ -1,5 +1,5 @@
 ---
-permalink: 2019/03/30/segment-Routing
+permalink: 2019/03/30/segment-Routing/
 tags:
   - segmentRouting
 layout: post

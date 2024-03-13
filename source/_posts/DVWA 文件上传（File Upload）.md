@@ -1,5 +1,5 @@
 ---
-permalink: 2019/04/29/dvwa-file-upload
+permalink: 2019/04/29/dvwa-file-upload/
 tags:
   - 文件上传
 layout: post

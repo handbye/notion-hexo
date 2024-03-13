@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/08/SSL-VPN
+permalink: 2018/06/08/SSL-VPN/
 tags:
   - sslvpn
 layout: post

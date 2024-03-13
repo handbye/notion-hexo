@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/13/shell-regex
+permalink: 2018/06/13/shell-regex/
 tags:
   - 正则表达式
   - shell

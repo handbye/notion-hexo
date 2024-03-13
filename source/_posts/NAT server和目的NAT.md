@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/13/NATserver-DNAT
+permalink: 2018/06/13/NATserver-DNAT/
 tags:
   - NAT Server
   - 目的NAT

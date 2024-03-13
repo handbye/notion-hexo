@@ -1,5 +1,5 @@
 ---
-permalink: 2022/01/11/fastjson-rce-summary
+permalink: 2022/01/11/fastjson-rce-summary/
 tags:
   - java
   - fastjson

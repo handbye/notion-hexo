@@ -1,5 +1,5 @@
 ---
-permalink: 2020/02/07/php-free-kill-webshell
+permalink: 2020/02/07/php-free-kill-webshell/
 tags:
   - webshell
   - 免杀

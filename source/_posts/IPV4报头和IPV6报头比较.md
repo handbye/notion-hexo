@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/12/IPV4-IPV6-package-diff
+permalink: 2016/12/12/IPV4-IPV6-package-diff/
 tags:
   - IPV4
   - IPV6

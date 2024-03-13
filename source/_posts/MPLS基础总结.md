@@ -1,5 +1,5 @@
 ---
-permalink: 2018/03/23/MPLS-summary
+permalink: 2018/03/23/MPLS-summary/
 tags:
   - MPLS
 layout: post

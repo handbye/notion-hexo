@@ -1,5 +1,5 @@
 ---
-permalink: 2022/03/07/java-serialize-URLDNS-gadget
+permalink: 2022/03/07/java-serialize-URLDNS-gadget/
 tags:
   - java
   - 反序列化

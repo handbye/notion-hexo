@@ -1,5 +1,5 @@
 ---
-permalink: 2016/12/16/RIPV1-RIPV2-RIPng-compare
+permalink: 2016/12/16/RIPV1-RIPV2-RIPng-compare/
 tags:
   - rip
 layout: post

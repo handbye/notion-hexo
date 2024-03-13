@@ -1,5 +1,5 @@
 ---
-permalink: 2020/07/29/aria2c-best-partice
+permalink: 2020/07/29/aria2c-best-partice/
 tags:
   - aria2
 layout: post

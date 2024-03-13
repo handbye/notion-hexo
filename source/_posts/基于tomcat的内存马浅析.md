@@ -1,5 +1,5 @@
 ---
-permalink: 2022/03/01/tomcat-memory-webshell
+permalink: 2022/03/01/tomcat-memory-webshell/
 tags:
   - java
   - 内存马

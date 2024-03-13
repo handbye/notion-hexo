@@ -1,5 +1,5 @@
 ---
-permalink: 2019/11/29/deepin-wechat-img-issue
+permalink: 2019/11/29/deepin-wechat-img-issue/
 tags:
   - deepin
 layout: post

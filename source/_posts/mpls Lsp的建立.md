@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/22/mpls-Lsp-create
+permalink: 2018/06/22/mpls-Lsp-create/
 tags:
   - MPLS
   - lsp

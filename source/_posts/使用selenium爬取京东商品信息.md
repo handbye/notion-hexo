@@ -1,5 +1,5 @@
 ---
-permalink: 2018/12/06/selenium-jd-product-info
+permalink: 2018/12/06/selenium-jd-product-info/
 tags:
   - 爬虫
   - selenium

@@ -1,5 +1,5 @@
 ---
-permalink: 2019/05/05/dvwa-sql-injection-blind
+permalink: 2019/05/05/dvwa-sql-injection-blind/
 tags:
   - SQL盲注
 layout: post

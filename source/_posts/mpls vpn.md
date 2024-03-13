@@ -1,5 +1,5 @@
 ---
-permalink: 2018/06/19/mpls-vpn
+permalink: 2018/06/19/mpls-vpn/
 tags:
   - MPLS
   - vpn
