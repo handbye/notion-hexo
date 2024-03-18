@@ -116,13 +116,12 @@ all_minifier: false
 
 jsdelivr_auto_fallback:
   enable: true
-  add_defer: false
+  add_defer: true
   dest_list:
     - cdn.jsdelivr.net
     - gcore.jsdelivr.net
+    - jsd.onmicrosoft.cn
     - testingcf.jsdelivr.net
-    - quantil.jsdelivr.net
-    - fastly.jsdelivr.net
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
