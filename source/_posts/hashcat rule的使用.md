@@ -91,7 +91,7 @@ _.
 ```
 
 
-不同的规则可以生成不同的密码字典，我们可也可以自定义规则文件。规则说明可以参考：[Rule-based Attack](https://hashcat.net/wiki/doku.php?id=rule_based_attack)
+不同的规则可以生成不同的密码字典，我们可也可以自定义规则文件。规则说明可以参考：[https://hashcat.net/wiki/doku.php?id=rule](https://hashcat.net/wiki/doku.php?id=rulebasedattack)[_based_](https://hashcat.net/wiki/doku.php?id=rulebasedattack)[attack](https://hashcat.net/wiki/doku.php?id=rulebasedattack)
 
 
 ## 使用方法
