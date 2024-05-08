@@ -1,5 +1,5 @@
 ---
-permalink: 2024/03/21/pe-file
+permalink: 2024/03/21/pe-file/
 tags:
   - PE结构
 layout: post
@@ -28,7 +28,7 @@ PE文件是Windows操作系统中常见的可执行文件格式，全称为Porta
 上面的图片被压缩了，有点模糊。可以看原图
 
 
-[PE_Format_Poster.rar](https://prod-files-secure.s3.us-west-2.amazonaws.com/3d85acde-8206-4e36-926a-9d0e8671cb8a/524ac00e-545e-44ed-8d1f-b9212c172e18/PE_Format_Poster.rar?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240321T101350Z&X-Amz-Expires=3600&X-Amz-Signature=ef5943611e9c3ba2ef01366fdd88e4800f834141550884e029671a4d79ac949e&X-Amz-SignedHeaders=host&x-id=GetObject)
+[PE_Format_Poster.rar](https://prod-files-secure.s3.us-west-2.amazonaws.com/3d85acde-8206-4e36-926a-9d0e8671cb8a/524ac00e-545e-44ed-8d1f-b9212c172e18/PE_Format_Poster.rar?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240508%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240508T150748Z&X-Amz-Expires=3600&X-Amz-Signature=8d17bd26f6daaf384b543f16cddbce3a1c16e5b5d409abdfd7c494a953fff26b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 或者看这里的图
