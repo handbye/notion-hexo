@@ -2299,9 +2299,67 @@
       "realName": "PE文件结构",
       "relativePath": "/PE文件结构.md",
       "docPath": "./source/_posts"
+    },
+    {
+      "id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "doc_id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "updated": 1715355540000,
+      "properties": {
+        "permalink": "2024/05/08/AI-security/",
+        "tags": [
+          "AI安全"
+        ],
+        "layout": "post",
+        "date": "2024-05-08 08:00:00",
+        "categories": [
+          "网络安全"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/qSS3uR.png",
+        "title": "我对AI大模型安全的一些探索"
+      },
+      "realName": "我对AI大模型安全的一些探索",
+      "relativePath": "/我对AI大模型安全的一些探索.md",
+      "docPath": "./source/_posts"
     }
   ],
   "catalog": [
+    {
+      "object": "page",
+      "id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "created_time": "2024-05-08T15:04:00.000Z",
+      "last_edited_time": "2024-05-10T15:39:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "4efa5a64-a6fd-41a8-82be-05abff3ae8fd"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "permalink": "2024/05/08/AI-security/",
+        "tags": [
+          "AI安全"
+        ],
+        "layout": "post",
+        "date": "2024-05-08 08:00:00",
+        "categories": [
+          "网络安全"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/qSS3uR.png",
+        "title": "我对AI大模型安全的一些探索"
+      },
+      "url": "https://www.notion.so/AI-264e94dd261a4a30a9a5e32e739f15c1",
+      "public_url": null
+    },
     {
       "object": "page",
       "id": "79541a7f-073c-4b54-8901-c90f437468a5",
@@ -2325,6 +2383,7 @@
       "in_trash": false,
       "properties": {
         "permalink": "2024/03/21/pe-file/",
+        "status": "已发布",
         "tags": [
           "PE结构"
         ],
@@ -2334,7 +2393,10 @@
           "windows"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/03/FpZiPJ.png",
-        "title": "PE文件结构"
+        "Name": "PE文件结构",
+        "title": "PE文件结构",
+        "urlname": "79541a7f-073c-4b54-8901-c90f437468a5",
+        "updated": "2024-05-08 23:06:00"
       },
       "url": "https://www.notion.so/PE-79541a7f073c4b548901c90f437468a5",
       "public_url": null
