@@ -2303,7 +2303,7 @@
     {
       "id": "2f940cc3-ff0c-4c4c-bc3b-d540d912cf24",
       "doc_id": "2f940cc3-ff0c-4c4c-bc3b-d540d912cf24",
-      "updated": 1715769540000,
+      "updated": 1715769780000,
       "properties": {
         "permalink": "2024/05/15/chatgpt-typora-uploadimage/",
         "tags": [
@@ -2322,6 +2322,27 @@
       "realName": "利用ChatGPT写一个typora自动上传图片到先知社区的脚",
       "relativePath": "/利用ChatGPT写一个typora自动上传图片到先知社区的脚.md",
       "docPath": "./source/_posts"
+    },
+    {
+      "id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "doc_id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "updated": 1715867460000,
+      "properties": {
+        "permalink": "2024/05/08/AI-security/",
+        "tags": [
+          "AI安全"
+        ],
+        "layout": "post",
+        "date": "2024-05-08 08:00:00",
+        "categories": [
+          "网络安全"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/qSS3uR.png",
+        "title": "我对AI大模型安全的一些探索"
+      },
+      "realName": "我对AI大模型安全的一些探索",
+      "relativePath": "/我对AI大模型安全的一些探索.md",
+      "docPath": "./source/_posts"
     }
   ],
   "catalog": [
@@ -2329,7 +2350,7 @@
       "object": "page",
       "id": "2f940cc3-ff0c-4c4c-bc3b-d540d912cf24",
       "created_time": "2024-05-15T07:11:00.000Z",
-      "last_edited_time": "2024-05-15T10:39:00.000Z",
+      "last_edited_time": "2024-05-15T10:43:00.000Z",
       "created_by": {
         "object": "user",
         "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
@@ -2362,6 +2383,43 @@
         "title": "利用ChatGPT写一个typora自动上传图片到先知社区的脚"
       },
       "url": "https://www.notion.so/ChatGPT-typora-2f940cc3ff0c4c4cbc3bd540d912cf24",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+      "created_time": "2024-05-08T15:04:00.000Z",
+      "last_edited_time": "2024-05-16T13:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "4efa5a64-a6fd-41a8-82be-05abff3ae8fd"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "permalink": "2024/05/08/AI-security/",
+        "tags": [
+          "AI安全"
+        ],
+        "layout": "post",
+        "date": "2024-05-08 08:00:00",
+        "categories": [
+          "网络安全"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/qSS3uR.png",
+        "title": "我对AI大模型安全的一些探索"
+      },
+      "url": "https://www.notion.so/AI-264e94dd261a4a30a9a5e32e739f15c1",
       "public_url": null
     },
     {

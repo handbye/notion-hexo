@@ -290,7 +290,7 @@ ChatGPT
 这个脚本将读取图片文件的路径，将其编码为 base64，构建 HTTP POST 请求，并将图片上传到指定的服务器。然后，解析返回的 JSON 数据以获取图片的 URL。
 
 	```go
-	package mai
+	package main
 	
 	import (
 	    "encoding/base64"
