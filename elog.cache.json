@@ -2282,7 +2282,7 @@
     {
       "id": "79541a7f-073c-4b54-8901-c90f437468a5",
       "doc_id": "79541a7f-073c-4b54-8901-c90f437468a5",
-      "updated": 1715180760000,
+      "updated": 1721654100000,
       "properties": {
         "permalink": "2024/03/21/pe-file/",
         "tags": [
@@ -2291,6 +2291,7 @@
         "layout": "post",
         "date": "2024-03-21 08:00:00",
         "categories": [
+          "系统",
           "windows"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/03/FpZiPJ.png",
@@ -2369,6 +2370,7 @@
       "in_trash": false,
       "properties": {
         "permalink": "2024/05/15/chatgpt-typora-uploadimage/",
+        "status": "已发布",
         "tags": [
           "ChatGPT",
           "typora"
@@ -2380,7 +2382,10 @@
           "工具使用"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/BUHNHt.png",
-        "title": "利用ChatGPT写一个typora自动上传图片到先知社区的脚"
+        "Name": "利用ChatGPT写一个typora自动上传图片到先知社区的脚",
+        "title": "利用ChatGPT写一个typora自动上传图片到先知社区的脚",
+        "urlname": "2f940cc3-ff0c-4c4c-bc3b-d540d912cf24",
+        "updated": "2024-05-15 18:43:00"
       },
       "url": "https://www.notion.so/ChatGPT-typora-2f940cc3ff0c4c4cbc3bd540d912cf24",
       "public_url": null
@@ -2408,6 +2413,7 @@
       "in_trash": false,
       "properties": {
         "permalink": "2024/05/08/AI-security/",
+        "status": "已发布",
         "tags": [
           "AI安全"
         ],
@@ -2417,7 +2423,10 @@
           "网络安全"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/05/qSS3uR.png",
-        "title": "我对AI大模型安全的一些探索"
+        "Name": "我对AI大模型安全的一些探索",
+        "title": "我对AI大模型安全的一些探索",
+        "urlname": "264e94dd-261a-4a30-a9a5-e32e739f15c1",
+        "updated": "2024-05-16 21:51:00"
       },
       "url": "https://www.notion.so/AI-264e94dd261a4a30a9a5e32e739f15c1",
       "public_url": null
@@ -2426,7 +2435,7 @@
       "object": "page",
       "id": "79541a7f-073c-4b54-8901-c90f437468a5",
       "created_time": "2024-03-21T10:06:00.000Z",
-      "last_edited_time": "2024-05-08T15:06:00.000Z",
+      "last_edited_time": "2024-07-22T13:15:00.000Z",
       "created_by": {
         "object": "user",
         "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
@@ -2445,20 +2454,17 @@
       "in_trash": false,
       "properties": {
         "permalink": "2024/03/21/pe-file/",
-        "status": "已发布",
         "tags": [
           "PE结构"
         ],
         "layout": "post",
         "date": "2024-03-21 08:00:00",
         "categories": [
+          "系统",
           "windows"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2024/03/FpZiPJ.png",
-        "Name": "PE文件结构",
-        "title": "PE文件结构",
-        "urlname": "79541a7f-073c-4b54-8901-c90f437468a5",
-        "updated": "2024-05-08 23:06:00"
+        "title": "PE文件结构"
       },
       "url": "https://www.notion.so/PE-79541a7f073c4b548901c90f437468a5",
       "public_url": null
