@@ -32,8 +32,7 @@ title: mpls Lsp的建立
 
 
 ```shell
-_static-lsp ingress lsp-name destination ip-address { mask-length | mask } { nexthop next-hop-address | outgoing-interface interface-type interface-number }  out-label out-label_
-
+static-lsp ingress lsp-name destination ip-address { mask-length | mask } { nexthop next-hop-address | outgoing-interface interface-type interface-number }  out-label out-label
 ```
 
 
@@ -41,8 +40,7 @@ _static-lsp ingress lsp-name destination ip-address { mask-length | mask } { nex
 
 
 ```shell
-_static-lsp transit lsp-name [ incoming-interface interface-type interface-number ] in-label in-label { nexthop next-hop-address | outgoing-interface interface-type interface-number }  out-label out-label_
-
+static-lsp transit lsp-name [ incoming-interface interface-type interface-number ] in-label in-label { nexthop next-hop-address | outgoing-interface interface-type interface-number }  out-label out-label
 ```
 
 
@@ -51,7 +49,6 @@ _static-lsp transit lsp-name [ incoming-interface interface-type interface-numbe
 
 ```shell
 static-lsp egress lsp-name [ incoming-interface interface-type interface-number ] in-label in-label [ lsrid ingress-lsr-id tunnel-id tunnel-id ]
-
 ```
 
 
