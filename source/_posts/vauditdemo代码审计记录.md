@@ -27,7 +27,7 @@ title: vauditdemo代码审计记录
 
 
 ```shell
-_├── about.inc                                     ---说明信息
+├── about.inc                                     ---说明信息
 ├── admin                                           ---管理员目录
 │   ├── captcha.php
 │   ├── delAdmin.php
@@ -80,8 +80,7 @@ _├── about.inc                                     ---说明信息
     ├── updateAvatar.php
     ├── updateName.php
     ├── updatePass.php
-    └── user.php_
-
+    └── user.php
 ```
 
 

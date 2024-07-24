@@ -41,7 +41,6 @@ public class Cat {
         System.out.println("cat eat: "+ food);
     }
 }
-
 ```
 
 
@@ -57,7 +56,6 @@ public  class main {
         cat.eat("香肠");
     }
 }
-
 ```
 
 
@@ -67,7 +65,6 @@ public  class main {
 ```text
 className=com.test.Cat
 method=eat
-
 ```
 
 
@@ -104,7 +101,6 @@ public class reflect {
         method1.invoke(o,"香肠");
     }
 }
-
 ```
 
 
@@ -155,7 +151,6 @@ public class Student {
         return "testReturnValue";
     }
 }
-
 ```
 
 
@@ -168,7 +163,6 @@ public class Student {
 ```java
 通过字符串获取Class对象，这个字符串必须带上完整路径名
 Class studentClass = Class.forName("com.test.reflection.Student");
-
 ```
 
 
@@ -204,7 +198,6 @@ for (Field field:fields){
 //获取指定字段
 Field studentAge = studentClass.getField("studentAge");
 System.out.println(studentAge);
-
 ```
 
 
@@ -231,7 +224,6 @@ Constructor[] Constructors = studentClass.getConstructors();
 for (Constructor Constructor:Constructors){
     System.out.println(Constructor);
 }
-
 ```
 
 
@@ -258,7 +250,6 @@ Method[] Methods = studentClass.getMethods();
 for (Method Method : Methods){
     System.out.println("dMethod: " + Method );
 }
-
 ```
 
 
@@ -293,7 +284,6 @@ studentShowMethod.setAccessible(true);
 // 使用函数的invoke方法调用此函数，传入此对象以及函数所需参数，如果有多个参数，用','连接即可。函数会返回一个Object对象，使用强制类型转换转成实际类型即可
 Object result = studentShowMethod.invoke(student,"message");
 System.out.println("result: " + result);
-
 ```
 
 
@@ -326,7 +316,6 @@ public class reflect {
         method.invoke(m,"cmd /c calc");
     }
 }
-
 ```
 
 
@@ -360,7 +349,6 @@ public class reflect {
         exec.invoke(m,"cmd /c calc");
     }
 }
-
 ```
 
 
@@ -389,7 +377,6 @@ public class reflect {
         exec.invoke(o,"cmd /c calc");
     }
 }
-
 ```
 
 

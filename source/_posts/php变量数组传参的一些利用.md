@@ -19,10 +19,9 @@ title: php变量数组传参的一些利用
 
 ```php
 <?php
-$a = $_GET["a"];
+$a = $GET["a"];
 printr($a);
-}_
-
+}
 ```
 
 

@@ -31,7 +31,6 @@ title: java安全-java 动态代理
 1. 定义一个接口及其实现类
 2. 创建一个代理类同样实现这个接口
 3. 将目标对象注入进代理类，然后在代理类的对应方法调用目标类中的对应方法。这样的话，我们就可以通过代理类屏蔽对目标对象的访问，并且可以在目标方法执行前后做一些自己想做的事情。
-
 ```
 
 
@@ -47,7 +46,6 @@ package com.staticproxy;
 public interface hello {
     String say(String name);
 }
-
 ```
 
 
@@ -63,7 +61,6 @@ public class helloImpl implements hello{
         return name;
     }
 }
-
 ```
 
 
@@ -88,7 +85,6 @@ public class proxy implements hello{
         return name;
     }
 }
-
 ```
 
 
@@ -105,7 +101,6 @@ public class test {
         proxy.say("你好");
     }
 }
-
 ```
 
 
@@ -152,7 +147,6 @@ JDK 动态代理类使用步骤：
 1. 定义一个接口及其实现类；
 2. 自定义 InvocationHandler 并重写invoke方法，在 invoke 方法中我们会调用原生方法（被代理类的方法）并自定义一些处理逻辑；
 2. 通过 Proxy.newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvocationHandler h) 方法创建代理对象；
-
 ```
 
 
@@ -168,7 +162,6 @@ package com.dynamicproxy;
 public interface hello {
     String say(String name);
 }
-
 ```
 
 
@@ -185,7 +178,6 @@ public class helloImpl implements hello {
         return name;
     }
 }
-
 ```
 
 
@@ -217,7 +209,6 @@ public class proxyHandle implements InvocationHandler {
         return result;
     }
 }
-
 ```
 
 
@@ -234,7 +225,6 @@ public class getproxyInstance {
         return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(),new proxyHandle(target));
     }
 }
-
 ```
 
 
@@ -250,7 +240,6 @@ public class test {
         hello helloproxy = (hello)getproxyInstance.getproxy(hello);
         helloproxy.say("你好");
     }
-
 ```
 
 

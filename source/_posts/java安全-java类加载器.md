@@ -21,7 +21,7 @@ java类加载器是JVM加载类到内存并运行的过程，这个过程有点�
 ## 类加载器
 
 
-java系统定义了三类加载器，分别是`BootstrapClassLoader`,`ExtensionClassLoader`,`AppClassLoader`。其中`BootstrapClassLoader`由 C 语言代码实现，主要负责加载存储在$JAVA_HOME/jre/lib/rt.jar中的核心 Java 库，包括 JVM 本身。`ExtensionClassLoader`由`sun.misc.Launcher$ExtClassLoader`类实现。负责加载 JVM 扩展类，用来加载`\jre\lib\ext`的类，这些库名通常以 javax 开头，它们的 jar 包位于` $JAVA_HOME/lib/ext/*.jar` 中，有很多 jar 包。`AppClassLoader`由`sun.misc.Launcher$`AppClassLoader实现。是直接面向我们用户的加载器，它会加载 Classpath 环境变量里定义的路径中的 jar 包和目录。`
+java系统定义了三类加载器，分别是BootstrapClassLoader,ExtensionClassLoader,AppClassLoader。其中BootstrapClassLoader由 C 语言代码实现，主要负责加载存储在$JAVA_HOME/jre/lib/rt.jar中的核心 Java 库，包括 JVM 本身。`ExtensionClassLoader`由`sun.misc.Launcher$ExtClassLoader类实现。负责加载 JVM 扩展类，用来加载\\jre\\lib\\ext的类，这些库名通常以 javax 开头，它们的 jar 包位于 $JAVA_HOME/lib/ext/*.jar` 中，有很多 jar 包。`AppClassLoader`由`sun.misc.Launcher$AppClassLoader`实现。是直接面向我们用户的加载器，它会加载 Classpath 环境变量里定义的路径中的 jar 包和目录。
 
 
 这三类加载器互相配合，完成了类的加载，这个过程比较复杂，而且还有一个比较重要的“双亲委派”机制，想要深入了解的同学可以看下[老大难的 Java ClassLoader 再不理解就老了](https://zhuanlan.zhihu.com/p/51374915)。
@@ -53,7 +53,6 @@ public class test {
         System.out.println("classloader test");
     }
 }
-
 ```
 
 
@@ -84,7 +83,6 @@ public class Demo1 {
         Cls.newInstance();
     }
 }
-
 ```
 
 
@@ -120,7 +118,6 @@ public class Demo2 {
         test.newInstance();
     }
 }
-
 ```
 
 
@@ -147,7 +144,6 @@ public class CypherTest{
         System.out.println("This experiment test is successful");
     }
 }
-
 ```
 
 
@@ -200,7 +196,6 @@ public class Encryption {
         System.out.println("This experiment test is successful");
     }
 }
-
 ```
 
 
@@ -278,7 +273,6 @@ public class Decryption extends ClassLoader { // 继承ClassLoader类
         }
     }
 }
-
 ```
 
 
@@ -299,7 +293,6 @@ public class Demo3 {
         main.invoke(null,(Object)new String[]{});
     }
 }
-
 ```
 
 

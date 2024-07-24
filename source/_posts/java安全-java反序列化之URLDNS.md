@@ -56,7 +56,6 @@ java为我们提供了对象序列化的机制，规定了要实现序列化对�
 
 ```java
 public final void writeObject(Object x) throws IOException
-
 ```
 
 
@@ -65,7 +64,6 @@ public final void writeObject(Object x) throws IOException
 
 ```java
 public final Object readObject() throws IOException, ClassNotFoundException
-
 ```
 
 
@@ -130,7 +128,6 @@ public class Student implements Serializable {
                 '}';
     }
 }
-
 ```
 
 
@@ -156,7 +153,6 @@ public class SerializeDemo {
         System.out.println("序列化数据写入成功！");
     }
 }
-
 ```
 
 
@@ -189,7 +185,6 @@ public class UnSerializeDemo {
         System.out.println(o);
     }
 }
-
 ```
 
 
@@ -204,7 +199,6 @@ public class UnSerializeDemo {
         ois.defaultReadObject();
         Runtime.getRuntime().exec("calc");
     }
-
 ```
 
 
@@ -235,7 +229,6 @@ Map是一个接口，它有很多实现类，其中一个实现类为HashMap,它
 ```java
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable
-
 ```
 
 
@@ -260,7 +253,6 @@ Gadget Chain:
     HashMap.putVal()
     HashMap.hash()
     URL.hashCode()
-
 ```
 
 
@@ -283,7 +275,6 @@ public class UrlTest {
     }
 
 }
-
 ```
 
 
@@ -355,7 +346,6 @@ public class URLDNS {
         }
     }
 }
-
 ```
 
 
@@ -432,7 +422,6 @@ public class URLDNS {
         }
     }
 }
-
 ```
 
 
@@ -458,7 +447,6 @@ public class UnSerializeDemo {
         fileInputStream.close();
     }
 }
-
 ```
 
 

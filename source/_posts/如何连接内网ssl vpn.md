@@ -90,10 +90,9 @@ title: 如何连接内网ssl vpn?
 
 
 ```text
-_[common]
+[common]
 bindaddr = 0.0.0.0
-bindport = 10991_
-
+bindport = 10991
 ```
 
 
@@ -101,8 +100,8 @@ bindport = 10991_
 
 
 ```text
-_[common]
-serveraddr = 1.14.47.152
+[common]
+serveraddr = 1.1.1.1
 serverport = 10991
 [tcp]      
 type = tcp 
@@ -121,8 +120,7 @@ remoteport = 12020
 type = udp
 localip = 127.0.0.1    
 localport = 8073        
-remoteport = 442_
-
+remoteport = 442
 ```
 
 
@@ -130,10 +128,9 @@ remoteport = 442_
 
 
 ```text
-_[common]
+[common]
 bindaddr = 0.0.0.0
-bindport = 21_
-
+bindport = 21
 ```
 
 
@@ -141,7 +138,7 @@ bindport = 21_
 
 
 ```text
-_[common]
+[common]
 serveraddr = 172.31.32.33  //内网可出网机器的ip
 serverport = 21
 
@@ -155,8 +152,7 @@ localport = 8081  //sslvpn的http端口
 type = udp
 remoteport = 8073
 localip = 192.168.254.203 //sslvpn的ip地址
-localport = 442 //sslvpn的udp端口_
-
+localport = 442 //sslvpn的udp端口
 ```
 
 

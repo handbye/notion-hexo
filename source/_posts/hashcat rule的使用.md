@@ -27,7 +27,7 @@ hashcat的规则位于`/usr/share/hashcat/rules`目录下，默认存在的规�
 
 
 ```shell
-_.
+.
 ├── best64.rule
 ├── combinator.rule
 ├── d3ad0ne.rule
@@ -76,9 +76,9 @@ _.
 ├── oscommerce.rule
 ├── rockyou-30000.rule
 ├── specific.rule
-├── T0XlC-insert__00-99_1950-2050_toprules__0F.rule
-├── T0XlC-insert__space_and_special__0F.rule
-├── T0XlC-insert__top_100_passwords__1G.rule
+├── T0XlC-insert00-991950-2050toprules0F.rule
+├── T0XlC-insertspaceandspecial0F.rule
+├── T0XlC-inserttop100passwords1G.rule
 ├── T0XlC.rule
 ├── T0XlCv1.rule
 ├── toggles1.rule
@@ -86,8 +86,7 @@ _.
 ├── toggles3.rule
 ├── toggles4.rule
 ├── toggles5.rule
-└── unix-ninja-leetspeak.rule_
-
+└── unix-ninja-leetspeak.rule
 ```
 
 
@@ -112,7 +111,6 @@ _.
 
 ```shell
 hashcat --stdout base.txt -r /usr/share/hashcat/rules/best64.rule -o password.txt
-
 ```
 
 
@@ -139,7 +137,6 @@ shadow.txt包含一个测试账号Hash。密码文件包含abc和password两个�
 
 ```shell
 hashcat -a 0 -m 0 shadow.txt ./base.txt -r /usr/share/hashcat/rules/best64.rule
-
 ```
 
 

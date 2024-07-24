@@ -11,7 +11,7 @@ home_cover: 'https://cdn.jsdelivr.net/gh/handbye/images/picgo/20201122180717.png
 title: C++学习笔记
 ---
 
-## 程序执行的本质
+# 程序执行的本质
 
 
 当我们写完一段程序需要给电脑进行运行时，首先编译器需要将代码编译为CPU可以看懂的机器码然后装载到内存中，CPU读取到内存中的指令后就会执行其中的执行控制IO设备完成相应的工作。
@@ -20,15 +20,15 @@ title: C++学习笔记
 CPU分为寄存器，运算器和控制器三部分。
 
 
-## 第一行c++代码
+# 第一行c++代码
 
 
-```c++
+```c
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello World!\\n";
 }
 
 ```
@@ -37,7 +37,7 @@ int main()
 ![20201122175455.png](../post_images/fd31df184d4737555474d84af16e34ff.png)
 
 
-## 常用语法
+# 常用语法
 
 
 c++的源文件扩展名是cpp
@@ -49,7 +49,7 @@ c++程序的入口是main函数
 c++完全兼容c
 
 
-### cin、cout
+## cin、cout
 
 
 需包含头文件 `#include <iostream>`
@@ -58,13 +58,13 @@ c++完全兼容c
 cout表示输出，例如：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+    cout << "Hello World!\\n";
     return 0;
 }
 
@@ -81,7 +81,7 @@ int main()
 在c++中`endl`也表示换行，所以上述语句也可以写成：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -97,7 +97,7 @@ int main()
 cin表示从键盘输入，例如：
 
 
-```c++
+```text
 #include <iostream>
 using namespace std;
 
@@ -119,13 +119,13 @@ int main()
 其中`>>`表示有移运算符
 
 
-### getchar()
+## getchar()
 
 
 等待用户输入
 
 
-## 函数重载（overload）
+# 函数重载（overload）
 
 
 当一个项目中存在多个函数，这些函数的函数名相同，但是函数传入的个数和类型不同，c++会自动按照函数传入的个数和类型寻找对应的函数进行运算，这个过程称为函数重载。
@@ -134,7 +134,7 @@ int main()
 例如：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -169,7 +169,7 @@ sum函数随着传入的实参个数不同会自动寻找对应的函数去计�
 在c语言中是不支持函数重载的。
 
 
-## 默认参数
+# 默认参数
 
 
 c++允许函数设置默认参数，在调用时可以根据情况省略实参，规则如下：
@@ -181,7 +181,7 @@ c++允许函数设置默认参数，在调用时可以根据情况省略实参�
 例：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -191,7 +191,7 @@ int sum(int v1 = 5, int v2 = 6) {
 
 
 int main()
-{   
+{
     cout << sum() << endl;
     cout << sum(10) << endl;
     cout << sum(10, 20) << endl;
@@ -205,7 +205,7 @@ int main()
 ![20201122175459.png](../post_images/3ecf9befdd52b7b3a11891b461b22acc.png)
 
 
-## extern "C"
+# extern "C"
 
 
 被extern c 修饰的代码会按照c语言的方式进行编译。
@@ -214,7 +214,7 @@ int main()
 例：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -230,7 +230,7 @@ extern "C" {
 
 
 int main()
-{   
+{
 
     return 0;
 }
@@ -248,6 +248,7 @@ int main()
 何时需要用到 `extern c` ？
 
 1. 用在c，c++的混合开发中，如果用到一些第三方的c语言库，那么就可以使用 extern c
+2. 
 
 例：
 
@@ -272,7 +273,7 @@ int delta(int v1, int v2) {
 如果在c++中需要调用这个c文件中的函数，那么c++文件应该这么写：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -295,7 +296,7 @@ int main(){
 ![20201122175501.png](../post_images/d337cb4697bdf2001fb09710c4965c1f.png)
 
 
-**`也就是声明必须用extern "c" 包裹，否则编译会报错`**
+**也就是声明必须用****`extern "c"`** **包裹，否则编译会报错**
 
 
 为了方便调用，可以将声明放到头文件中，新建头文件`math.h`:
@@ -310,40 +311,40 @@ int main(){
 ![20201122175503.png](../post_images/04be66f23f6a1c362af60fe67662e2f2.png)
 
 
-## ifdef
+# ifdef
 
 
 为了使只有c++调用`math.h`头文件时才加`extern “c”`，可以使用`#ifdef`进行判断
 
 
-> c++文件默认都会有一个宏定义 #define  cplusplus
+> c++文件默认都会有一个宏定义 #define  __cplusplus
 
 
 然后头文件就可以这样写：
 
 
-```c++
-#ifdef cplusplus
+```c
+#ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 	int sum(int v1, int v2);
 	int delta(int v1, int v2);
 
-#ifdef cplusplus
+#ifdef __cplusplus
 }
 #endif
 
 ```
 
 
-## pragma once
+# pragma once
 
 
-`## pragma once`是用来防止头文件被重复包含
+`# pragma once`是用来防止头文件被重复包含
 
 
-例如在某个程序中多次写了包含头文件，在头文件中写了`## pragma once`就可以防止头文件中的内容被多次编译。
+例如在某个程序中多次写了包含头文件，在头文件中写了`# pragma once`就可以防止头文件中的内容被多次编译。
 
 
 ![20201122175504.png](../post_images/450e938152d52d02bf7cad27eca74fc2.png)
@@ -352,7 +353,7 @@ extern "C" {
 ![20201122175505.png](../post_images/3e529e6be7704dc8f25b39f78b79bf21.png)
 
 
-## 内联函数
+# 内联函数
 
 
 使用`inline`修饰函数的声明或实现，可以使其变成内联函数
@@ -379,7 +380,7 @@ extern "C" {
 例如：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -402,7 +403,7 @@ int main(){
 - 对比宏，内联函数多了语法检测和函数特性
 - 宏只是简单的文本替换，所以遇到计算尽量使用函数
 
-## const
+# const
 
 
 const是常量的意思，被其修饰的变量不可修改。
@@ -413,11 +414,11 @@ const是常量的意思，被其修饰的变量不可修改。
 一下5个指针的分别是什么含义？
 
 
-```c++
-_int age = 10;
-const int p0 = &age;
-int const p1 = &age;
-int  const p2 = &age;_
+```c
+int age = 10;
+const int *p0 = &age;
+int const *p1 = &age;
+int * const p2 = &age;
 
 ```
 
@@ -425,8 +426,8 @@ int  const p2 = &age;_
 例如：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 int main(){
@@ -434,14 +435,14 @@ int main(){
     int age = 10;
     int heigh = 20;
 
-    int  const p2 = &age;
+    int * const p2 = &age;
 
-    p2 = 30; //age=30
+    *p2 = 30; //age=30
     p2 = &heigh;  //报错
-    p2 = 40; //heigh = 40
+    *p2 = 40; //heigh = 40
 
     return 0;
-}_
+}
 
 
 ```
@@ -450,10 +451,10 @@ int main(){
 ![20201122175507.png](../post_images/58c328e13dea930d6c81849ae4016d6a.png)
 
 
-报错的原因是const修饰的是其右边的内容，const修饰的是p2所以`p2=&heigh`报错，而_`p2=30`_就不会报错.
+报错的原因是const修饰的是其右边的内容，const修饰的是p2所以`p2=&heigh`报错，而`*p2=30`就不会报错.
 
 
-## 引用(reference)
+# 引用(reference)
 
 
 在C语言中，使用指针（Pointer）可以间接获取、修改某个变量的值
@@ -462,22 +463,22 @@ int main(){
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 int main(){
 
     int age = 10;
 
-    int p = &age;
+    int* p = &age;
 
-    p = 20;
+    *p = 20;
 
     cout << age << endl;
 
     return 0;
-}_
+}
 
 
 ```
@@ -492,7 +493,7 @@ int main(){
 例：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -525,7 +526,7 @@ int main(){
 例：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -552,7 +553,7 @@ int main(){
 上述代码就轻松完成了在主函数内部使用用swap函数完成a和b的值的替换，使得**swap函数访问了它函数外部的值**。
 
 
-## 汇编
+# 汇编
 
 
 汇编语言的种类：
@@ -562,7 +563,7 @@ int main(){
 - x64汇编（64bit）
 - ARM汇编（嵌入式、移动设备
 
-### 寄存器
+## 寄存器
 
 
 ![20201122175511.png](../post_images/e8d999eba46d4f63fff48a72a2c6b572.png)
@@ -574,7 +575,7 @@ int main(){
 ![20201122175512.png](../post_images/581192dbf85b6c49b6f4b03d342a08e0.png)
 
 
-### x64汇编-寄存器
+## x64汇编-寄存器
 
 
 RAX RBX RCX RDX 为通用寄存器
@@ -589,23 +590,23 @@ x86架构下的通用寄存器为：EAX EBX ECX EDX ,为了兼容32位的CPU架�
 ![20201122175513.png](../post_images/bce0e00799240899875eb0e33b3fb518.png)
 
 
-### 内联汇编
+## 内联汇编
 
 
-在c++中嵌入汇编代码称为内联汇编，汇编代码使用**`asm`**包裹。
+在c++中嵌入汇编代码称为内联汇编，汇编代码使用`__asm`包裹。
 
 
 例如：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
 int main(){
 	int a = 10;
 
-	asm {
+	__asm {
 		mov eax, 10
 
 	}
@@ -616,7 +617,7 @@ int main(){
 ```
 
 
-### mov指令
+## mov指令
 
 
 `mov dest, src`
@@ -631,7 +632,7 @@ word是2字节，dword是4字节（double word），qword是8字节（quad word�
 
 
 ```text
-mov dword ptr [a],0Ah  
+mov dword ptr [a],0Ah
 
 ```
 
@@ -639,7 +640,7 @@ mov dword ptr [a],0Ah
 表示将10放到内存地址为a的存储空间中，并占用4个字节
 
 
-### call函数地址
+## call函数地址
 
 
 call 表示调用函数
@@ -648,7 +649,7 @@ call 表示调用函数
 ![20201122175514.png](../post_images/64b9227a9643f91cb5b57268e90217cd.png)
 
 
-### lea指令
+## lea指令
 
 
 `lea dest, [ 地址值 ]`
@@ -663,7 +664,7 @@ lea是直接赋值地址值，而mov是取内存地址中存放的东西
 例：
 
 
-```json
+```text
 mov eax, dword ptr [1122H]
 表示取出[1122H]这个内存地址中存放的东西赋值给eax
 lea eax, [1122H]
@@ -672,13 +673,13 @@ lea eax, [1122H]
 ```
 
 
-### ret
+## ret
 
 
 ret表示函数返回
 
 
-### xor
+## xor
 
 
 `xor op1, op2`
@@ -687,7 +688,7 @@ ret表示函数返回
 将op1和op2异或的结果赋值给op1，类似于op1 = op1 ^ op2
 
 
-### add
+## add
 
 
 `add op1, op2`
@@ -696,7 +697,7 @@ ret表示函数返回
 类似于op1 = op1 + op2
 
 
-### sub
+## sub
 
 
 `sub op1, op2`
@@ -705,16 +706,16 @@ ret表示函数返回
 类似于op1 = op1 - op2
 
 
-### inc
+## inc
 
 
- `inc op`
+`inc op`
 
 
 自增，类似于op = op + 1
 
 
-### des
+## des
 
 
 `dec op`
@@ -723,7 +724,7 @@ ret表示函数返回
 自减，类似于op = op – 1
 
 
-### jmp
+## jmp
 
 
 jmp 内存地址
@@ -735,10 +736,10 @@ jmp 内存地址
 j开头的一般都是跳转，大多数是带条件的跳转，一般跟test、cmp等指令配合使用
 
 
-## 面向对象
+# 面向对象
 
 
-### 类的定义
+## 类的定义
 
 
 C++中可以使用struct、class来定义一个类
@@ -747,19 +748,19 @@ struct的默认成员权限是public
 class的默认成员权限是private
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 //类的定义
 struct Person{
 	//成员变量
-	int mage;
+	int m_age;
 	//成员函数
 	void run() {
-		cout << mage << "run" << endl;
+		cout << m_age << "run" << endl;
 	}
-};_
+};
 
 ```
 
@@ -767,41 +768,41 @@ struct Person{
 或：
 
 
-```c++
-_class Person {
+```c
+class Person {
 public:
 	//成员变量
-	int mage;
+	int m_age;
 	//成员函数
 	void run() {
-		cout << mage << "run" << endl;
+		cout << m_age << "run" << endl;
 	}
-};_
+};
 
 ```
 
 
-### 类的实例化
+## 类的实例化
 
 
-```c++
-_int main(){
+```c
+int main(){
 	Person person;
-	person.mage = 20;
+	person.m_age = 20;
 	person.run();
 	return 0;
-}_
+}
 
 ```
 
 
-### 对象的内存布局
+## 对象的内存布局
 
 
 ![20201122175515.png](../post_images/9843a8638b27cdf19ed8f6160f7c3c66.png)
 
 
-### this
+## this
 
 
 this是指向当前对象的指针
@@ -810,61 +811,61 @@ this是指向当前对象的指针
 对象在调用成员函数的时候，会自动传入当前对象的内存地址
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 //类的定义
 class Person {
 public:
 	//成员变量
-	int mage;
+	int m_age;
 	//成员函数
 	void run() {
-		cout << this->mage << "run()" << endl;
+		cout << this->m_age << "run()" << endl;
 	}
 };
 int main(){
 	Person person1;
-	person1.mage = 20;
+	person1.m_age = 20;
 	person1.run();
 
 	Person person2;
-	person2.mage = 30;
+	person2.m_age = 30;
 	person2.run();
 	return 0;
-}_
+}
 
 ```
 
 
-如上面的例子，当存在两个Person对象时，不同的对象在调用同一个`run()`_方法时是如何寻找到属于自己的mage的呢？就是靠this这个指针，this默认指向当前对象的内存地址，为当前对象寻找对应方法。this是一个隐式参数，其实不写this也可以正常执行，如下：_
+如上面的例子，当存在两个Person对象时，不同的对象在调用同一个`run()`方法时是如何寻找到属于自己的m_age的呢？就是靠this这个指针，this默认指向当前对象的内存地址，为当前对象寻找对应方法。this是一个隐式参数，其实不写this也可以正常执行，如下：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 //类的定义
 class Person {
 public:
 	//成员变量
-	int mage;
+	int m_age;
 	//成员函数
 	void run() {
-		cout << mage << "run()" << endl;
+		cout << m_age << "run()" << endl;
 	}
 };
 int main(){
 	Person person1;
-	person1.mage = 20;
+	person1.m_age = 20;
 	person1.run();
 
 	Person person2;
-	person2.mage = 30;
+	person2.m_age = 30;
 	person2.run();
 	return 0;
-}_
+}
 
 ```
 
@@ -875,13 +876,13 @@ int main(){
 ![20201122175517.png](../post_images/aabaabfb7abd9f503477ea5ef5065597.png)
 
 
-### 指针访问对象成员的本质
+## 指针访问对象成员的本质
 
 
 待补充
 
 
-### 封装
+## 封装
 
 
 封装的含义是成员变量私有化，提供公共的getter和setter给外界去访问成员变量。
@@ -890,26 +891,26 @@ int main(){
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 //类的定义
 class Person {
 private:
 	//成员变量
-	int mage;
+	int m_age;
 public:
 	void setAge(int age) {
 		if (age<=0){
-			mage = 1;
+			m_age = 1;
 		}
 		else {
-			mage = age;
+			m_age = age;
 		}
 	}
 	int getAge(){
-		return mage;
+		return m_age;
 	}
 };
 int main(){
@@ -918,7 +919,7 @@ int main(){
 	cout << person.getAge() << endl;
 
 	return 0;
-}_
+}
 
 ```
 
@@ -926,7 +927,7 @@ int main(){
 ![20201122175518.png](../post_images/1ec5089c2cbe95ded28f6a9ebb707837.png)
 
 
-### 内存空间布局
+## 内存空间布局
 
 
 每个应用都有自己独立的内存空间，其内存空间一般都有以下几大区域：
@@ -944,7 +945,7 @@ int main(){
 ![20201122175519.png](../post_images/9ad9e389b4a295bc312e1bef0f308fea.png)
 
 
-### 堆空间
+## 堆空间
 
 
 在程序运行过程，为了能够自由控制内存的生命周期、大小，会经常使用堆空间的内存
@@ -956,19 +957,19 @@ int main(){
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 int main(){
 	//申请四个字节的内存空间用来存储整形数据，
-	//由于malloc申请的内存默认都为void  ，所以需要强转
-	int_  _p = (int_ _) malloc(4);
-	 p = 11;
-	cout <<  p << endl;
+	//由于malloc申请的内存默认都为void * ，所以需要强转
+	int * p = (int *) malloc(4);
+	* p = 11;
+	cout << * p << endl;
 	free(p);
 	return 0;
-}_
+}
 
 
 ```
@@ -980,21 +981,21 @@ int main(){
 或申请一个char类型的内存
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
 int main(){
 
-	char  _p = (char_ _) malloc(4);
-	p = 'a';
-	(p + 1) = 10;
-	(p + 2) = 11;
-	(p + 3) = 12;
-	cout <<  p << endl;
+	char * p = (char *) malloc(4);
+	*p = 'a';
+	*(p + 1) = 10;
+	*(p + 2) = 11;
+	*(p + 3) = 12;
+	cout << * p << endl;
 	free(p);
 	return 0;
-}_
+}
 
 
 ```
@@ -1006,18 +1007,18 @@ int main(){
 除此外c++还支持new/delete方式申请内存
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 int main(){
 
-	int p = new int;
-	p = 10;
-	cout <<  p << endl;
+	int *p = new int;
+	*p = 10;
+	cout << * p << endl;
 	delete p;
 	return 0;
-}_
+}
 
 
 ```
@@ -1031,7 +1032,7 @@ int main(){
 - 申请堆空间成功后，会返回那一段内存空间的地址
 - 申请和释放必须是1对1的关系，不然可能会存在内存泄露
 
-### 堆空间的初始化
+## 堆空间的初始化
 
 
 ![20201122175523.png](../post_images/70210c32c84767825e24a19d36f7a880.png)
@@ -1046,7 +1047,7 @@ memset函数是将较大的数据结构（比如对象、数组等）内存清�
 ![20201122175525.png](../post_images/69a4bb6095ed4ec4584cb22f4f0e0608.png)
 
 
-### 对象的内存
+## 对象的内存
 
 
 对象的内存可以存在于3种地方：
@@ -1058,7 +1059,7 @@ memset函数是将较大的数据结构（比如对象、数组等）内存清�
 ![20201122175526.png](../post_images/bb8576b3ef7ce068acb46ebeebf07d66.png)
 
 
-### 构造函数（Constructor）
+## 构造函数（Constructor）
 
 
 构造函数（也叫构造器），在对象创建的时候自动调用，一般用于完成对象的初始化工作
@@ -1067,13 +1068,13 @@ memset函数是将较大的数据结构（比如对象、数组等）内存清�
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
 public:
-	int mage;
+	int m_age;
 	Person() {
 		cout << "Person()" << endl;
 	}
@@ -1084,7 +1085,7 @@ int main(){
 	Person person1;
 	Person person2;
 	return 0;
-}_
+}
 
 ```
 
@@ -1106,7 +1107,7 @@ int main(){
 通过malloc分配的对象不会调用构造函数
 
 
-### 析构函数（Destructor）
+## 析构函数（Destructor）
 
 
 析构函数（也叫析构器），在对象销毁的时候自动调用，一般用于完成对象的清理工作。
@@ -1118,13 +1119,13 @@ int main(){
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
 public:
-	int mage;
+	int m_age;
 	Person() {
 		cout << "Person()" << endl;
 	}
@@ -1140,7 +1141,7 @@ int main(){
 	Person person1;
 	Person person2;
 	return 0;
-}_
+}
 
 
 ```
@@ -1154,20 +1155,20 @@ int main(){
 - 通过malloc分配的对象free的时候不会调用析构函数
 - 构造函数、析构函数要声明为public，才能被外界正常使用
 
-### 声明和实现分离
+## 声明和实现分离
 
 
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 //声明
 class Person {
 private:
-	int mage;
+	int m_age;
 public:
 	void setAge(int age);
 	int getAge();
@@ -1178,15 +1179,15 @@ public:
 
 //实现
 Person::Person() {
-	 mage = 0;
+	 m_age = 0;
 }
 
 void Person::setAge(int age) {
-	this->mage = age;
+	this->m_age = age;
 }
 
 int Person::getAge() {
-	return this->mage;
+	return this->m_age;
 }
 
 Person::~Person() {
@@ -1197,7 +1198,7 @@ int main() {
 	Person person;
 	person.setAge(1);
 	cout << person.getAge() << endl;
-}_
+}
 
 ```
 
@@ -1211,7 +1212,7 @@ int main() {
 ![20201122175530.png](../post_images/f1d9464391489ba133391694d1062c9b.png)
 
 
-### 命名空间
+## 命名空间
 
 
 命名空间可以用来避免命名冲突。
@@ -1220,12 +1221,12 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 namespace abc {
-	int gage;
+	int g_age;
 
 	class Person {};
 
@@ -1235,11 +1236,11 @@ namespace abc {
 }
 
 int main() {
-	abc::gage = 20;
-	abc::Person p = new abc::Person();
+	abc::g_age = 20;
+	abc::Person* p = new abc::Person();
 	abc::test();
 	return 0;
-}_
+}
 
 ```
 
@@ -1256,11 +1257,11 @@ int main() {
 例：
 
 
-```c++
-	_using namespace abc;
-	gage = 20;
-	Person p = new Person();
-	test();_
+```c
+	using namespace abc;
+	g_age = 20;
+	Person* p = new Person();
+	test();
 
 ```
 
@@ -1271,14 +1272,14 @@ int main() {
 命名空间可以嵌套和合并，c++中存在一个默认的全局命名空间`::`我们创建的命名空间默认都嵌套在它里面.
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
-int gage;
+int g_age;
 
 namespace abc {
-	int gage;
+	int g_age;
 
 	class Person {};
 
@@ -1288,13 +1289,13 @@ namespace abc {
 }
 
 int main() {
-	::gage = 20;
+	::g_age = 20;
 	using namespace abc;
-	::abc::gage = 70;
-	Person p = new Person();
+	::abc::g_age = 70;
+	Person* p = new Person();
 	test();
 	return 0;
-}_
+}
 
 ```
 
@@ -1302,7 +1303,7 @@ int main() {
 ![20201122175533.png](../post_images/6c5c4542d3afde107722c814d7554f1c.png)
 
 
-### 继承
+## 继承
 
 
 继承，可以让子类拥有父类的所有成员（变量\函数）。
@@ -1311,8 +1312,8 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
@@ -1325,7 +1326,7 @@ public:
 
 class Student : public Person {
 public:
-	int classnum;
+	int class_num;
 	void study() {
 		cout << "Student::study()" << endl;
 	}
@@ -1334,10 +1335,10 @@ public:
 int main() {
 	Student student;
 	student.age = 20;
-	student.classnum = 10;
+	student.class_num = 10;
 	student.run();
 	student.study();
-}_
+}
 
 ```
 
@@ -1350,7 +1351,7 @@ int main() {
 - Student是子类（subclass，派生类）
 - Person是父类（superclass，超类）
 
-具体的继承关系可参考：https://www.runoob.com/cplusplus/cpp-inheritance.html
+具体的继承关系可参考：[https://www.runoob.com/cplusplus/cpp-inheritance.html](https://www.runoob.com/cplusplus/cpp-inheritance.html)
 
 
 继承对象的内存布局：
@@ -1359,7 +1360,7 @@ int main() {
 ![20201122175535.png](../post_images/b0cb7d646b270f5a63f86474ced1333f.png)
 
 
-### 成员访问权限
+## 成员访问权限
 
 
 **成员访问权限、继承方式有3种：**
@@ -1379,10 +1380,10 @@ int main() {
 访问权限不影响对象的内存布局
 
 
-具体的继承关系可参考：https://www.runoob.com/cplusplus/cpp-inheritance.html
+具体的继承关系可参考：[https://www.runoob.com/cplusplus/cpp-inheritance.html](https://www.runoob.com/cplusplus/cpp-inheritance.html)
 
 
-### 初始化列表
+## 初始化列表
 
 
 **特点**
@@ -1394,12 +1395,12 @@ int main() {
 例：
 
 
-```c++
-_class Person {
+```c
+class Person {
 public:
-	int mage;
-	int mheight;
-	Person(int age, int height) : m__age(age), m_height(height) {
+	int m_age;
+	int m_height;
+	Person(int age, int height) : m_age(age), m_height(height) {
 
 	}
 };
@@ -1416,16 +1417,16 @@ public:
 它等价于：
 
 
-```c++
-_class Person {
+```c
+class Person {
 public:
-	int mage;
-	int mheight;
+	int m_age;
+	int m_height;
 	Person(int age, int height) {
-		this->mage = age;
-		this->mheight = height;
+		this->m_age = age;
+		this->m_height = height;
 	}
-};_
+};
 
 ```
 
@@ -1436,15 +1437,15 @@ public:
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
 public:
-	int mage;
-	int mheight;
-	Person(int age = 0, int height = 0) : m__age(age), m_height(height) {
+	int m_age;
+	int m_height;
+	Person(int age = 0, int height = 0) : m_age(age), m_height(height) {
 		cout << m_age << " " << m_height << endl;
 	}
 };
@@ -1473,18 +1474,18 @@ int main() {
 ### 构造函数的互相调用
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
 public:
-	int mage;
-	int mheight;
+	int m_age;
+	int m_height;
 	Person() : Person(10,20) {
 
 	}
-	Person(int age , int height) : m__age(age), m_height(height) {
+	Person(int age , int height) : m_age(age), m_height(height) {
 		cout << m_age << " " << m_height << endl;
 	}
 };
@@ -1509,7 +1510,7 @@ int main() {
 - 如果子类的构造函数显式地调用了父类的有参构造函数，就不会再去默认调用父类的无参构造函数
 - 如果父类缺少无参构造函数，子类的构造函数必须显式调用父类的有参构造函数
 
-### 父类指针，子类指针
+## 父类指针，子类指针
 
 
 父类指针可以指向子类对象，是安全的，开发中经常用到（继承方式必须是public）。
@@ -1524,7 +1525,7 @@ int main() {
 ![20201122175540.png](../post_images/bd0fcfed1911d15298fe3e12a5482d99.png)
 
 
-### 多态
+## 多态
 
 
 默认情况下，编译器只会根据指针类型调用对应的函数，不存在多态。
@@ -1533,8 +1534,8 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Dog {
@@ -1567,17 +1568,17 @@ public:
 	}
 };
 
-void liu(Dog p) {
+void liu(Dog* p) {
 	p->run();
 	p->speak();
 }
 
-void liu(Cat p) {
+void liu(Cat* p) {
 	p->run();
 	p->speak();
 }
 
-void liu(Pig p) {
+void liu(Pig* p) {
 	p->run();
 	p->speak();
 }
@@ -1587,7 +1588,7 @@ int main() {
 	liu(new Cat());
 	liu(new Pig());
 	return 0;
-}_
+}
 
 ```
 
@@ -1604,8 +1605,8 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Animal {
@@ -1650,7 +1651,7 @@ public:
 };
 
 //父指针指向子类对象
-void liu(Animal  p) {
+void liu(Animal * p) {
 	p->run();
 	p->speak();
 }
@@ -1661,7 +1662,7 @@ int main() {
 	liu(new Cat());
 	liu(new Pig());
 	return 0;
-}_
+}
 
 ```
 
@@ -1701,8 +1702,8 @@ C++中的多态通过虚函数（virtual function）来实现。
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Animal {
@@ -1746,7 +1747,7 @@ public:
 	}
 };
 
-void liu(Animal  p) {
+void liu(Animal * p) {
 	p->run();
 	p->speak();
 }
@@ -1757,7 +1758,7 @@ int main() {
 	liu(new Cat());
 	liu(new Pig());
 	return 0;
-}_
+}
 
 ```
 
@@ -1801,7 +1802,7 @@ delete父类指针时，才会调用子类的析构函数，保证析构的完�
 - 抽象类也可以包含非纯虚函数、成员变量
 - 如果父类是抽象类，子类没有完全重写纯虚函数，那么这个子类依然是抽象类
 
-### 静态成员
+## 静态成员
 
 
 静态成员：被static修饰的成员变量\函数。
@@ -1819,28 +1820,28 @@ delete父类指针时，才会调用子类的析构函数，保证析构的完�
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Car {
 public:
-	static int mprice;
+	static int m_price;
 	void run() {
 		cout << "run()" << endl;
 	}
 };
 
 //在类外面初始化静态成员变量
-int Car::mprice = 10;
+int Car::m_price = 10;
 
 int main() {
 	Car car1;
-	car1.mprice = 100;
-	cout << car1.mprice << endl;
-	cout << Car::mprice << endl;
+	car1.m_price = 100;
+	cout << car1.m_price << endl;
+	cout << Car::m_price << endl;
 	return 0;
-}_
+}
 
 ```
 
@@ -1860,29 +1861,29 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Car {
 public:
-	static int mprice;
+	static int m_price;
 	static void run() {
 		cout << "run()" << endl;
 	}
 };
 
 //在类外面初始化静态成员变量
-int Car::mprice = 10;
+int Car::m_price = 10;
 
 int main() {
 	Car car1;
 	car1.run();
-	Car  p = new Car();
+	Car * p = new Car();
 	p->run();
 	Car::run();
 	return 0;
-}_
+}
 
 ```
 
@@ -1899,36 +1900,36 @@ int main() {
 现在有个需求是统计创建了多少个Car对象。
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Car {
 private:
-	static int mcount;
+	static int m_count;
 public:
 	Car() {
-		mcount++;
+		m_count++;
 	}
 	~Car() {
-		mcount--;
+		m_count--;
 	}
 	static int getCount() {
-		return mcount;
+		return m_count;
 	}
 };
 
 //在类外面初始化静态成员变量
-int Car::mcount = 0;
+int Car::m_count = 0;
 
-Car gcar;  //创建了第一个Car对象
+Car g_car;  //创建了第一个Car对象
 
 int main() {
 	Car car1;  //创建了第二个Car对象
-	Car  p = new Car();  //创建了第三个Car对象
+	Car * p = new Car();  //创建了第三个Car对象
 	cout << Car::getCount() << endl;
 	return 0;
-}_
+}
 
 ```
 
@@ -1936,7 +1937,7 @@ int main() {
 ![20201122175549.png](../post_images/2cac9e0029d465aa241323b12cbb0268.png)
 
 
-### const 成员
+## const 成员
 
 
 const成员：被const修饰的成员变量、非静态成员函数。
@@ -1961,7 +1962,7 @@ const成员函数和非const成员函数构成重载
 const对象（指针）只能调用const成员函数、static成员函数
 
 
-### 引用类型成员
+## 引用类型成员
 
 
 引用类型成员变量必须初始化（不考虑static情况）
@@ -1972,7 +1973,7 @@ const对象（指针）只能调用const成员函数、static成员函数
 ![20201122175550.png](../post_images/22b3a8a6dc65361bf242dacfadf2b5c6.png)
 
 
-### 拷贝构造函数（Copy Constructor）
+## 拷贝构造函数（Copy Constructor）
 
 
 拷贝构造函数是构造函数的一种.
@@ -1987,15 +1988,15 @@ const对象（指针）只能调用const成员函数、static成员函数
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Car {
-	int mprice;
-	int mlength;
+	int m_price;
+	int m_length;
 public:
-	Car(int price = 0, int length = 0) :m__price(price), m_length(length) {
+	Car(int price = 0, int length = 0) :m_price(price), m_length(length) {
 		cout << "Car(int price = 0, int length = 0)" << endl;
 	}
 
@@ -2038,35 +2039,35 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Person {
 
 public:
-	int mage;
-	Person(int age=0) :mage(age){}
+	int m_age;
+	Person(int age=0) :m_age(age){}
 	//父类的拷贝构造函数
-	Person(const Person &person) :m__age(person.m__age){}
+	Person(const Person &person) :m_age(person.m_age){}
 };
 
 class Student : public Person {
 
 public:
-	int mscore;
+	int m_score;
 	//子类调用父类的构造函数
-	Student(int age=0, int score=0) :Person(age), mscore(score){}
+	Student(int age=0, int score=0) :Person(age), m_score(score){}
 	//子类调用父类的拷贝构造函数
-	Student(const Student &student) :Person(student), m__score(student.m__score){}
+	Student(const Student &student) :Person(student), m_score(student.m_score){}
 };
 
 int main(){
 	Student student1(10, 100);
 	Student student2(student1);
-	cout << student2.mage << endl;
-	cout << student2.mscore << endl;
-}_
+	cout << student2.m_age << endl;
+	cout << student2.m_score << endl;
+}
 
 ```
 
@@ -2093,13 +2094,13 @@ int main(){
 
 - 将指针类型的成员变量所指向的内存空间，拷贝到新的内存空间
 
-### 匿名对象
+## 匿名对象
 
 
 匿名对象：没有变量名、没有被指针指向的对象，用完后马上调用析构
 
 
-### 友元
+## 友元
 
 
 友元包括友元函数和友元类
@@ -2111,21 +2112,21 @@ int main(){
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Point {
-	int mx;
-	int my;
+	int m_x;
+	int m_y;
 public:
 	int getX() {
-		return mx;
+		return m_x;
 	};
 	int getY() {
-		return my;
+		return m_y;
 	};
-	Point(int x , int y): m__x(x),m_y(y){}
+	Point(int x , int y): m_x(x),m_y(y){}
 	void display() {
 		cout << "(" << m_x << ", " << m_y << ")" <<endl;
 	}
@@ -2152,22 +2153,22 @@ int main() {
 上述代码使用了get方法去获取Point类中的私有成员变量，假设需要频繁的访问，可以将add方法设置为Point类的友元函数，这样add方法就可以直接访问Point类的私有成员变量。
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Point {
 	friend Point add(Point p1, Point p2);
-	int mx;
-	int my;
+	int m_x;
+	int m_y;
 public:
 	int getX() {
-		return mx;
+		return m_x;
 	};
 	int getY() {
-		return my;
+		return m_y;
 	};
-	Point(int x , int y): m__x(x),m_y(y){}
+	Point(int x , int y): m_x(x),m_y(y){}
 	void display() {
 		cout << "(" << m_x << ", " << m_y << ")" <<endl;
 	}
@@ -2191,7 +2192,7 @@ int main() {
 ![20201122175556.png](../post_images/6c3cde75a024b73079bc8c08b78e67c3.png)
 
 
-### 内部类
+## 内部类
 
 
 如果将类A定义在类C的内部，那么类A就是一个内部类（嵌套类）。
@@ -2205,7 +2206,7 @@ int main() {
 - 不会影响外部类的内存布局
 - 可以在外部类内部声明，在外部类外面进行定义
 
-### 局部类
+## 局部类
 
 
 在一个函数内部定义的类，称为局部类。
@@ -2217,10 +2218,10 @@ int main() {
 - 其所有的成员必须定义在类内部，不允许定义static成员变量
 - 成员函数不能直接访问函数的局部变量（static变量除外）
 
-## 其他语法
+# 其他语法
 
 
-### 运算符重载
+## 运算符重载
 
 
 运算符重载（操作符重载）：可以为运算符增加一些新的功能。
@@ -2235,7 +2236,7 @@ int main() {
 全局函数、成员函数都支持运算符重载。
 
 
-### 异常
+## 异常
 
 - 异常是一种在程序运行过程中可能会发生的错误（比如内存不够）
 - 异常没有被处理，会导致程序终止
@@ -2249,7 +2250,7 @@ throw异常后，会在当前函数中查找匹配的catch，找不到就终止�
 例：
 
 
-```c++
+```c
 #include <iostream>
 using namespace std;
 
@@ -2280,8 +2281,8 @@ int main() {
 ![20201122175600.png](../post_images/1c1a2ce2ef61a28c69cfeb6f2eafaac7.png)
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 int divide(int v1, int v2) {
@@ -2298,12 +2299,12 @@ int main() {
 		int b = 0;
 		divide(a, b);
 	}
-	catch (const char  exception) {
+	catch (const char * exception) {
 		cout << "运算错误:" << exception << endl;
 	}
 
 	return 0;
-}_
+}
 
 ```
 
@@ -2317,25 +2318,25 @@ int main() {
 例：
 
 
-```c++
-_#include <iostream>
+```c
+#include <iostream>
 using namespace std;
 
 class Exception {
 public:
-	virtual const char  what() = 0;
+	virtual const char * what() = 0;
 };
 
 class DivideException : public Exception {
 public:
-	const char what() {
+	const char* what() {
 		return "不能除以0";
 	}
 };
 
 class AddException : public Exception {
 public:
-	const char what() {
+	const char* what() {
 		return "加法有问题";
 	}
 };
@@ -2359,7 +2360,7 @@ int main() {
 	}
 
 	return 0;
-}_
+}
 
 ```
 

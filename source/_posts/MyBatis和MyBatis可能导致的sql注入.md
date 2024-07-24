@@ -44,7 +44,6 @@ jar包下载地址：[http://www.mybatis.cn/82.html](http://www.mybatis.cn/82.ht
     <artifactId>mybatis</artifactId>
     <version>3.5.3</version>
 </dependency>
-
 ```
 
 
@@ -61,7 +60,6 @@ MyBatis配置文件，包括MyBatis全局配置文件和MyBatis映射文件，�
 第二步：通过SqlSessionFactory，MyBatis可以创建SqlSession（即会话），MyBatis是通过SqlSession来操作数据库的。
 
 第三步：MyBatis操作数据库。SqlSession本身不能直接操作数据库，它是通过底层的Executor执行器接口来操作数据库的。Executor接口有两个实现类，一个是普通执行器，一个是缓存执行器（默认）。Executor执行器要处理的SQL信息是封装到一个底层对象MappedStatement中。该对象包括：SQL语句、输入参数映射信息、输出结果集映射信息。其中输入参数和输出结果的映射类型包括Java的简单类型、HashMap集合对象、POJO对象类型。
-
 ```
 
 
@@ -92,7 +90,6 @@ MyBatis配置文件，包括MyBatis全局配置文件和MyBatis映射文件，�
         <mapper resource="Mapper.xml"/>
     </mappers>
 </configuration>
-
 ```
 
 
@@ -163,7 +160,6 @@ public class Person
                 '}';
     }
 }
-
 ```
 
 
@@ -171,15 +167,14 @@ public class Person
 
 
 ```xml
-_<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.dk.Person.Mapper">
     <select id="GetUserByID" parameterType="int" resultType="cn.dk.Person">
         select  from user where id = #{id}
     </select>
-</mapper>_
-
+</mapper>
 ```
 
 
@@ -228,7 +223,6 @@ public class Test {
         System.out.println(person);
     }
 }
-
 ```
 
 
@@ -254,7 +248,7 @@ public class Test {
 3. 方法的返回值和Mapper.xml中resultType一致
 
 ```java
-_package cn.dk;
+package cn.dk;
 
 public interface Mapper {
     /
@@ -264,8 +258,7 @@ public interface Mapper {
      /
 
     public abstract Person GetUserByID(int id);
-}_
-
+}
 
 ```
 
@@ -310,7 +303,6 @@ public class Test {
         session.close();
     }
 }
-
 ```
 
 
@@ -327,15 +319,14 @@ MyBatis规定匿名传参时必须传入param1，param2这种方式的，例如�
 
 
 ```xml
-_<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.dk.Mapper">
     <select id="GetUserByID" parameterType="int" resultType="cn.dk.Person">
         select  from user where id = #{param1} or id = #{param2}
     </select>
-</mapper>_
-
+</mapper>
 ```
 
 
@@ -350,7 +341,6 @@ import java.util.List;
 public interface Mapper {
     public abstract List<Person> GetUserByID(int param1, int param2);
 }
-
 ```
 
 
@@ -380,15 +370,14 @@ public interface Mapper {
 
 
 ```xml
-_<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.dk.Mapper">
     <select id="GetUserByID" parameterType="String" resultType="cn.dk.Person">
         select  from user where name = ${value}
     </select>
-</mapper>_
-
+</mapper>
 ```
 
 
@@ -453,7 +442,6 @@ MYBatis最有可能产生注入的三种情况：
 
 ```sql
 like concat('%',#{title}, '%')
-
 ```
 
 1. in之后参数的SQL注入。使用如下SQL语句可防止SQL注入
@@ -463,7 +451,6 @@ id in
 <foreach collection="ids" item="item" open="("separator="," close=")">
 #{item} 
 </foreach>
-
 ```
 
 

@@ -33,7 +33,6 @@ if($of){
  fwrite($of,$content);
 }
 echo "MySQL数据库连接配置成功!<br /><br />";
-
 ```
 
 

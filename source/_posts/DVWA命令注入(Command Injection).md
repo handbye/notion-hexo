@@ -88,18 +88,15 @@ Impossible等级使用了白名单的方式去检查我们的输入，它会将�
 ```php
 
     // Get input
-    $target = $_REQUEST[ 'ip' ];_
+    $target = $REQUEST[ 'ip' ];
     $target = stripslashes( $target );
 
     // Split the IP into 4 octects
-    $octet = explode( ".", $_target );
+    $octet = explode( ".", $target );
 
     // Check IF each octet is an integer
-    if( ( isnumeric(_ $octet[0] ) ) && ( is_numeric( $_octet[1] ) ) && ( isnumeric(_ $octet[2] ) ) && ( is_numeric( $octet[3] ) ) && ( sizeof( $octet ) == 4 ) ) {
+    if( ( isnumeric( $octet[0] ) ) && ( is_numeric( $octet[1] ) ) && ( isnumeric( $octet[2] ) ) && ( is_numeric( $octet[3] ) ) && ( sizeof( $octet ) == 4 ) ) {
         // If all 4 octets are int's put the IP back together.
         $target = $octet[0] . '.' . $octet[1] . '.' . $octet[2] . '.' . $octet[3];
-
-
-
 ```
 

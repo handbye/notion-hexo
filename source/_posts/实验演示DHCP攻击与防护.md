@@ -122,7 +122,6 @@ interface e0/0
 interface e0/1
     ip dhcp snooping limit rate 2
 ip dhcp snooping vlan 1
-
 ```
 
 
