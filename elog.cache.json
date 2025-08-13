@@ -1570,9 +1570,9 @@
     {
       "id": "24032eeb-ad35-80e1-b822-d586cbd4ec32",
       "doc_id": "24032eeb-ad35-80e1-b822-d586cbd4ec32",
-      "updated": 1753868280000,
+      "updated": 1755074940000,
       "properties": {
-        "permalink": "2025/7/30/tscan-tool",
+        "permalink": "2025/7/30/tscan-tool/",
         "tags": [
           "安全工具",
           "cursor",
@@ -1596,7 +1596,7 @@
       "object": "page",
       "id": "24032eeb-ad35-80e1-b822-d586cbd4ec32",
       "created_time": "2025-07-30T09:31:00.000Z",
-      "last_edited_time": "2025-07-30T09:38:00.000Z",
+      "last_edited_time": "2025-08-13T08:49:00.000Z",
       "created_by": {
         "object": "user",
         "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
@@ -1614,7 +1614,7 @@
       "archived": false,
       "in_trash": false,
       "properties": {
-        "permalink": "2025/7/30/tscan-tool",
+        "permalink": "2025/7/30/tscan-tool/",
         "tags": [
           "安全工具",
           "cursor",

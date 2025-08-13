@@ -1,5 +1,5 @@
 ---
-permalink: 2025/7/30/tscan-tool
+permalink: 2025/7/30/tscan-tool/
 tags:
   - 安全工具
   - cursor
