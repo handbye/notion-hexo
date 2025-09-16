@@ -1589,9 +1589,74 @@
       "realName": "完全由cursor开发的基于任务驱动的打点和扫描工具发布了",
       "relativePath": "/完全由cursor开发的基于任务驱动的打点和扫描工具发布了.md",
       "docPath": "./source/_posts"
+    },
+    {
+      "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
+      "doc_id": "27032eeb-ad35-8081-a91c-dc50667746a1",
+      "updated": 1758011640000,
+      "properties": {
+        "permalink": "2025/09/16/gnuboard4-sqli/",
+        "tags": [
+          "SQL注入",
+          "gnuboard4"
+        ],
+        "layout": "post",
+        "date": "2025-09-16 08:00:00",
+        "categories": [
+          "web安全",
+          "代码审计",
+          "漏洞挖掘"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/09/JocM2R.png",
+        "title": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs/search.php"
+      },
+      "realName": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs!sear",
+      "relativePath": "/Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs!sear.md",
+      "docPath": "./source/_posts"
     }
   ],
   "catalog": [
+    {
+      "object": "page",
+      "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
+      "created_time": "2025-09-16T08:30:00.000Z",
+      "last_edited_time": "2025-09-16T08:34:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "4efa5a64-a6fd-41a8-82be-05abff3ae8fd"
+      },
+      "archived": false,
+      "in_trash": false,
+      "is_locked": false,
+      "properties": {
+        "permalink": "2025/09/16/gnuboard4-sqli/",
+        "tags": [
+          "SQL注入",
+          "gnuboard4"
+        ],
+        "layout": "post",
+        "date": "2025-09-16 08:00:00",
+        "categories": [
+          "web安全",
+          "代码审计",
+          "漏洞挖掘"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/09/JocM2R.png",
+        "title": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs/search.php"
+      },
+      "url": "https://www.notion.so/Second-order-SQL-Injection-via-variable-pollution-of-search_table-identifier-injection-in-bbs-sear-27032eebad358081a91cdc50667746a1",
+      "public_url": null
+    },
     {
       "object": "page",
       "id": "24032eeb-ad35-80e1-b822-d586cbd4ec32",
@@ -1613,8 +1678,10 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2025/7/30/tscan-tool/",
+        "status": "已发布",
         "tags": [
           "安全工具",
           "cursor",
@@ -1626,7 +1693,10 @@
           "安全工具"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/07/adZqnv.png",
-        "title": "完全由cursor开发的基于任务驱动的打点和扫描工具发布了"
+        "Name": "完全由cursor开发的基于任务驱动的打点和扫描工具发布了",
+        "title": "完全由cursor开发的基于任务驱动的打点和扫描工具发布了",
+        "urlname": "24032eeb-ad35-80e1-b822-d586cbd4ec32",
+        "updated": "2025-08-13 16:49:00"
       },
       "url": "https://www.notion.so/cursor-24032eebad3580e1b822d586cbd4ec32",
       "public_url": null
@@ -1652,6 +1722,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2025/04/10/rsvmp-bypass",
         "status": "已发布",
@@ -1694,6 +1765,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2025/01/10/cloud-native-security/",
         "status": "已发布",
@@ -1735,6 +1807,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2024/05/15/chatgpt-typora-uploadimage/",
         "status": "已发布",
@@ -1778,6 +1851,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2024/05/08/AI-security/",
         "status": "已发布",
@@ -1819,6 +1893,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2024/03/21/pe-file/",
         "status": "已发布",
@@ -1861,6 +1936,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/07/01/NAT-alg-ASPF/",
         "status": "已发布",
@@ -1904,6 +1980,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/06/19/mpls-vpn/",
         "status": "已发布",
@@ -1947,6 +2024,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/11/22/cPlus-learn-note/",
         "status": "已发布",
@@ -1989,6 +2067,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/06/22/mpls-Lsp-create/",
         "status": "已发布",
@@ -2032,6 +2111,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/08/26/file-upload-sumarry/",
         "status": "已发布",
@@ -2074,6 +2154,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/06/19/two-way-NAT/",
         "status": "已发布",
@@ -2117,6 +2198,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/03/02/ipsec-vpn-ike/",
         "status": "已发布",
@@ -2160,6 +2242,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/02/07/php-free-kill-webshell/",
         "status": "已发布",
@@ -2203,6 +2286,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/04/19/spring-rce-1/",
         "status": "已发布",
@@ -2246,6 +2330,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/13/dvwa-xss-stored/",
         "status": "已发布",
@@ -2288,6 +2373,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/12/02/vauditdemo-codeview/",
         "status": "已发布",
@@ -2330,6 +2416,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/06/26/L2TP-VPN/",
         "status": "已发布",
@@ -2372,6 +2459,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/03/30/segment-Routing/",
         "status": "已发布",
@@ -2414,6 +2502,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/10/14/php-var-array/",
         "status": "已发布",
@@ -2456,6 +2545,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/05/19/antsword-bypass-waf/",
         "status": "已发布",
@@ -2499,6 +2589,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/03/01/tomcat-memory-webshell/",
         "status": "已发布",
@@ -2542,6 +2633,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/08/18/yzmcms-code/",
         "status": "已发布",
@@ -2585,6 +2677,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/04/28/php-file-write/",
         "status": "已发布",
@@ -2627,6 +2720,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/07/03/dhcp-security/",
         "status": "已发布",
@@ -2668,6 +2762,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/03/16/php-xxe/",
         "status": "已发布",
@@ -2710,6 +2805,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/04/28/dvwa-file-inclusion/",
         "status": "已发布",
@@ -2752,6 +2848,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/02/dvwa-sql-injection/",
         "status": "已发布",
@@ -2794,6 +2891,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/04/21/dvwa-brute-force/",
         "status": "已发布",
@@ -2836,6 +2934,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/06/07/thinkphp3.2.3-sqli/",
         "status": "已发布",
@@ -2879,6 +2978,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2024/01/26/simple-honey-pot/",
         "status": "已发布",
@@ -2921,6 +3021,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/07/16/ipsec-vpn/",
         "status": "已发布",
@@ -2964,6 +3065,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/11/dvwa-xss-dom/",
         "status": "已发布",
@@ -3006,6 +3108,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/11/29/deepin-wechat-img-issue/",
         "status": "已发布",
@@ -3048,6 +3151,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/25/lagou-crawl-solution/",
         "status": "已发布",
@@ -3090,6 +3194,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/04/20/spring-rce-2/",
         "status": "已发布",
@@ -3133,6 +3238,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/05/12/discuzx3.3-authkey-blasting/",
         "status": "已发布",
@@ -3176,6 +3282,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/10/22/java-sec-java-reflect/",
         "status": "已发布",
@@ -3219,6 +3326,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/10/26/java-sec-rmi/",
         "status": "已发布",
@@ -3262,6 +3370,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/12/dvwa-xss-reflected/",
         "status": "已发布",
@@ -3304,6 +3413,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/10/28/java-sec-proxy/",
         "status": "已发布",
@@ -3347,6 +3457,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2016/12/12/IPV4-IPV6-package-diff/",
         "status": "已发布",
@@ -3390,6 +3501,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/12/26/hashcat-rule/",
         "status": "已发布",
@@ -3432,6 +3544,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/12/23/kuwomusic-xss/",
         "status": "已发布",
@@ -3474,6 +3587,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/01/11/fastjson-rce-summary/",
         "status": "已发布",
@@ -3518,6 +3632,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/05/dvwa-sql-injection-blind/",
         "status": "已发布",
@@ -3560,6 +3675,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/10/08/bypass-safedog/",
         "status": "已发布",
@@ -3602,6 +3718,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/04/24/dvwa-command-injection/",
         "status": "已发布",
@@ -3644,6 +3761,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/02/23/notion-fast/",
         "status": "已发布",
@@ -3686,6 +3804,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/04/27/dvwa-CSRF/",
         "status": "已发布",
@@ -3728,6 +3847,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/03/15/web-login-esnp-USG6000V/",
         "status": "已发布",
@@ -3771,6 +3891,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/03/07/java-serialize-URLDNS-gadget/",
         "status": "已发布",
@@ -3815,6 +3936,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/10/23/data-auit-system-rce/",
         "status": "已发布",
@@ -3858,6 +3980,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/10/25/java-sec-classloader/",
         "status": "已发布",
@@ -3901,6 +4024,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/04/21/IP-conflict-network-outage/",
         "status": "已发布",
@@ -3943,6 +4067,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/08/11/saltstack-bypass-auth/",
         "status": "已发布",
@@ -3985,6 +4110,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/07/14/Phishing-record/",
         "status": "已发布",
@@ -4027,6 +4153,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/04/02/mybatis-and-sqli/",
         "status": "已发布",
@@ -4070,6 +4197,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/07/29/aria2c-best-partice/",
         "status": "已发布",
@@ -4112,6 +4240,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/11/11/burpsuite-plugins/",
         "status": "已发布",
@@ -4154,6 +4283,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2020/09/29/php-unserialize-Escape-character/",
         "status": "已发布",
@@ -4197,6 +4327,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/06/01/sqli-common-fuction/",
         "status": "已发布",
@@ -4239,6 +4370,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/04/29/dvwa-file-upload/",
         "status": "已发布",
@@ -4281,6 +4413,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2021/11/09/pentest-hospital/",
         "status": "已发布",
@@ -4323,6 +4456,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/03/23/MPLS-summary/",
         "status": "已发布",
@@ -4365,6 +4499,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/08/03/zabbix-sql-injection/",
         "status": "已发布",
@@ -4408,6 +4543,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2018/06/18/DHCP-snooping-summary/",
         "status": "已发布",
@@ -4450,6 +4586,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2017/09/13/cisco-management-protocol/",
         "status": "已发布",
@@ -4493,6 +4630,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/10/15/Mr820-pentest/",
         "status": "已发布",
@@ -4535,6 +4673,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2019/05/06/weak-session-ids/",
         "status": "已发布",
@@ -4577,6 +4716,7 @@
       },
       "archived": false,
       "in_trash": false,
+      "is_locked": false,
       "properties": {
         "permalink": "2022/06/15/connect-Intranet-ssl-vpn/",
         "status": "已发布",
