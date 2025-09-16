@@ -1593,7 +1593,7 @@
     {
       "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
       "doc_id": "27032eeb-ad35-8081-a91c-dc50667746a1",
-      "updated": 1758011640000,
+      "updated": 1758011880000,
       "properties": {
         "permalink": "2025/09/16/gnuboard4-sqli/",
         "tags": [
@@ -1608,10 +1608,10 @@
           "漏洞挖掘"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/09/JocM2R.png",
-        "title": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs/search.php"
+        "title": "Gnuboard4 has Second-order SQL Injection via variable pollution of search_table  in bbs/search.php"
       },
-      "realName": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs!sear",
-      "relativePath": "/Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs!sear.md",
+      "realName": "Gnuboard4 has Second-order SQL Injection via variable pollution of search_table  in bbs!search.php",
+      "relativePath": "/Gnuboard4 has Second-order SQL Injection via variable pollution of search_table  in bbs!search.php.md",
       "docPath": "./source/_posts"
     }
   ],
@@ -1620,7 +1620,7 @@
       "object": "page",
       "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
       "created_time": "2025-09-16T08:30:00.000Z",
-      "last_edited_time": "2025-09-16T08:34:00.000Z",
+      "last_edited_time": "2025-09-16T08:38:00.000Z",
       "created_by": {
         "object": "user",
         "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
@@ -1652,9 +1652,9 @@
           "漏洞挖掘"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/09/JocM2R.png",
-        "title": "Second-order SQL Injection via variable pollution of search_table (identifier injection) in bbs/search.php"
+        "title": "Gnuboard4 has Second-order SQL Injection via variable pollution of search_table  in bbs/search.php"
       },
-      "url": "https://www.notion.so/Second-order-SQL-Injection-via-variable-pollution-of-search_table-identifier-injection-in-bbs-sear-27032eebad358081a91cdc50667746a1",
+      "url": "https://www.notion.so/Gnuboard4-has-Second-order-SQL-Injection-via-variable-pollution-of-search_table-in-bbs-search-php-27032eebad358081a91cdc50667746a1",
       "public_url": null
     },
     {
