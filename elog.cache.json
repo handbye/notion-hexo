@@ -1593,7 +1593,7 @@
     {
       "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
       "doc_id": "27032eeb-ad35-8081-a91c-dc50667746a1",
-      "updated": 1758011880000,
+      "updated": 1758099360000,
       "properties": {
         "permalink": "2025/09/16/gnuboard4-sqli/",
         "tags": [
@@ -1620,7 +1620,7 @@
       "object": "page",
       "id": "27032eeb-ad35-8081-a91c-dc50667746a1",
       "created_time": "2025-09-16T08:30:00.000Z",
-      "last_edited_time": "2025-09-16T08:38:00.000Z",
+      "last_edited_time": "2025-09-17T08:56:00.000Z",
       "created_by": {
         "object": "user",
         "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
