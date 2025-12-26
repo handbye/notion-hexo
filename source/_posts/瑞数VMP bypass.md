@@ -1,5 +1,5 @@
 ---
-permalink: 2025/04/10/rsvmp-bypass
+permalink: 2025/04/10/rsvmp-bypass/
 tags:
   - 瑞数VMP
 layout: post
