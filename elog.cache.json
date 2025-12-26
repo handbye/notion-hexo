@@ -1636,6 +1636,29 @@
       "realName": "ubuntu安装IDA9.0并开启mcp",
       "relativePath": "/ubuntu安装IDA9.0并开启mcp.md",
       "docPath": "./source/_posts"
+    },
+    {
+      "id": "2d532eeb-ad35-8027-a364-d698ba19232d",
+      "doc_id": "2d532eeb-ad35-8027-a364-d698ba19232d",
+      "updated": 1766741580000,
+      "properties": {
+        "permalink": "2025/09/24/brg/",
+        "tags": [
+          "安全工具",
+          "burpsuite"
+        ],
+        "layout": "post",
+        "date": "2025-12-26 08:00:00",
+        "categories": [
+          "web安全",
+          "安全工具"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/12/4r7Z3K.png",
+        "title": "Burp Suite 正则生成插件"
+      },
+      "realName": "Burp Suite 正则生成插件",
+      "relativePath": "/Burp Suite 正则生成插件.md",
+      "docPath": "./source/_posts"
     }
   ],
   "catalog": [
@@ -2052,6 +2075,7 @@
       "is_locked": false,
       "properties": {
         "permalink": "2025/04/10/rsvmp-bypass/",
+        "status": "已发布",
         "tags": [
           "瑞数VMP"
         ],
@@ -2062,7 +2086,10 @@
           "工具使用"
         ],
         "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/04/7NTLKb.png",
-        "title": "瑞数VMP bypass"
+        "Name": "瑞数VMP bypass",
+        "title": "瑞数VMP bypass",
+        "urlname": "1d132eeb-ad35-800b-adee-eacf967c7fbd",
+        "updated": "2025-10-21 10:19:00"
       },
       "url": "https://www.notion.so/VMP-bypass-1d132eebad35800badeeeacf967c7fbd",
       "public_url": null
@@ -2327,6 +2354,46 @@
         "updated": "2024-03-13 12:28:00"
       },
       "url": "https://www.notion.so/CNVD-2021-62106-yzmcms-2d1ddc0f822d4373a50cd1dab61ac1e4",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "2d532eeb-ad35-8027-a364-d698ba19232d",
+      "created_time": "2025-12-26T09:20:00.000Z",
+      "last_edited_time": "2025-12-26T09:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "06e7eaef-0b0b-47cc-83b6-113c5720a729"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "4efa5a64-a6fd-41a8-82be-05abff3ae8fd"
+      },
+      "archived": false,
+      "in_trash": false,
+      "is_locked": false,
+      "properties": {
+        "permalink": "2025/09/24/brg/",
+        "tags": [
+          "安全工具",
+          "burpsuite"
+        ],
+        "layout": "post",
+        "date": "2025-12-26 08:00:00",
+        "categories": [
+          "web安全",
+          "安全工具"
+        ],
+        "home_cover": "https://cdn.jsdelivr.net/gh/handbye/images@master/uPic/2025/12/4r7Z3K.png",
+        "title": "Burp Suite 正则生成插件"
+      },
+      "url": "https://www.notion.so/Burp-Suite-2d532eebad358027a364d698ba19232d",
       "public_url": null
     },
     {
