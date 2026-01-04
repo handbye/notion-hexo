@@ -1,5 +1,5 @@
 ---
-permalink: 2025/09/24/brg/
+permalink: 2025/12/24/brg/
 tags:
   - 安全工具
   - burpsuite
